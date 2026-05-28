@@ -108,9 +108,50 @@
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
     .feature-card {
       background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 2rem; transition: border-color 0.2s, transform 0.2s;
+      padding: 2rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      cursor: pointer; position: relative;
     }
-    .feature-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+    .feature-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,86,219,0.2); }
+    .feature-card:active { transform: translateY(-2px); }
+    .feature-card-arrow {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: rgba(26,86,219,0.15); display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: #60a5fa; transition: background 0.2s, transform 0.2s;
+    }
+    .feature-card:hover .feature-card-arrow { background: rgba(26,86,219,0.3); transform: scale(1.1); }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 2.5rem; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto;
+      position: relative; animation: modalIn 0.25s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .modal-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border);
+      background: transparent; color: var(--text-muted); font-size: 18px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.1); }
+    .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .modal-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .modal-subtitle { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .modal-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .modal-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; }
+    .modal-features li::before { content: '✓'; color: #34d399; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .modal-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .modal-cta a { flex: 1; min-width: 140px; text-align: center; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+    .modal-cta a:hover { opacity: 0.9; transform: translateY(-1px); }
+    .modal-cta .cta-primary { background: var(--gradient); color: white; }
+    .modal-cta .cta-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .feature-icon {
       width: 48px; height: 48px; border-radius: 12px; margin-bottom: 1.5rem;
       background: rgba(26,86,219,0.15); display: flex; align-items: center; justify-content: center;
@@ -213,7 +254,7 @@
 <!-- NAVBAR -->
 <nav>
   <a href="/" class="nav-logo">
-    <div class="nav-logo-icon">FSL</div>
+    <img src="logo-icon.png" alt="AgentPay Logo" style="width:36px;height:36px;object-fit:contain;border-radius:8px;" />
     <span class="nav-logo-text">FSL <span>+</span> AgentPay</span>
   </a>
   <div class="nav-links">
@@ -229,6 +270,9 @@
 <!-- HERO -->
 <div class="hero">
   <div>
+    <div style="margin-bottom: 2rem; display: flex; justify-content: center;">
+      <img src="logo-icon.png" alt="AgentPay Logo" style="width:100px;height:100px;object-fit:contain;border-radius:20px;box-shadow:0 0 40px rgba(26,86,219,0.4);" />
+    </div>
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
       Piattaforma Live su app.fslditta.com
@@ -279,47 +323,56 @@
   </p>
   
   <div class="features-grid">
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('wallet')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🔐</div>
       <h3 class="feature-title">Wallet Self-Custodial</h3>
       <p class="feature-desc">Controllo completo delle tue chiavi private. Nessun intermediario. Sicurezza biometrica con Face ID e Touch ID.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('ai')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🤖</div>
       <h3 class="feature-title">Agenti AI Avanzati</h3>
       <p class="feature-desc">Autorizza transazioni tramite agenti AI. Policy di spesa personalizzabili. Automazione intelligente dei pagamenti.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('analytics')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">📊</div>
       <h3 class="feature-title">Portfolio Analytics</h3>
       <p class="feature-desc">Grafici avanzati con ROI, Sharpe Ratio, Max Drawdown. Analisi tecnica con SMA, EMA, RSI, MACD.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('trading')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🔄</div>
       <h3 class="feature-title">Swap & Trading</h3>
       <p class="feature-desc">Integrazione con Uniswap, PancakeSwap e Curve. Ordini limite, copy trading, yield farming su 8 pool.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('multichain')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🌐</div>
       <h3 class="feature-title">Multi-Chain</h3>
       <p class="feature-desc">Supporto per Ethereum, Polygon, BSC, Solana e Arbitrum. Consolidamento portfolio cross-chain.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('banking')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🏦</div>
       <h3 class="feature-title">Banking Integration</h3>
       <p class="feature-desc">Integrazione con Stripe e Wise per trasferimenti bancari. IBAN validation, tracking in tempo reale.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('notifications')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">📱</div>
       <h3 class="feature-title">Push Notifications</h3>
       <p class="feature-desc">Notifiche in tempo reale per prezzi, ordini, rewards e leaderboard. Centro notifiche integrato.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('social')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🤝</div>
       <h3 class="feature-title">Social & Referral</h3>
       <p class="feature-desc">Condivisione portfolio su Twitter, Telegram, WhatsApp. Programma referral con 4 tier (Bronze → Platinum).</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" onclick="openModal('security')">
+      <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🛡️</div>
       <h3 class="feature-title">Sicurezza Avanzata</h3>
       <p class="feature-desc">2FA con SMS, Email e Authenticator. Crittografia end-to-end. Gestione sessioni sicura.</p>
@@ -554,6 +607,178 @@
     </span>
   </div>
 </footer>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-icon" id="modal-icon"></div>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <p class="modal-subtitle" id="modal-subtitle"></p>
+    <ul class="modal-features" id="modal-features"></ul>
+    <div class="modal-cta" id="modal-cta"></div>
+  </div>
+</div>
+
+<script>
+const MODALS = {
+  wallet: {
+    icon: '🔐',
+    title: 'Wallet Self-Custodial',
+    subtitle: 'Hai il controllo totale delle tue chiavi private. Nessun intermediario, nessun custode. Le tue chiavi, i tuoi fondi — sempre e solo tuoi.',
+    features: [
+      'Chiavi private generate e conservate localmente sul dispositivo',
+      'Autenticazione biometrica con Face ID e Touch ID',
+      'Backup cifrato con frase mnemonica BIP-39 a 24 parole',
+      'Firma offline delle transazioni per massima sicurezza',
+      'Compatibile con hardware wallet Ledger e Trezor',
+      'Import/export wallet tramite JSON cifrato'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
+  },
+  ai: {
+    icon: '🤖',
+    title: 'Agenti AI Avanzati',
+    subtitle: 'Automatizza i tuoi pagamenti con agenti AI intelligenti. Definisci policy di spesa personalizzate e lascia che l’AI gestisca le transazioni in modo sicuro e autonomo.',
+    features: [
+      'Autorizzazione transazioni tramite AgentPay SDK',
+      'Policy di spesa configurabili per importo, categoria e destinatario',
+      'Whitelist e blacklist destinatari con approvazione manuale',
+      'Log completo di tutte le azioni eseguite dagli agenti',
+      'Integrazione con workflow FSL Ditta per automazione aziendale',
+      'Notifica push per ogni azione eseguita dall’agente'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '🌐 FSL Ditta', href: 'https://fslditta.com', primary: false }]
+  },
+  analytics: {
+    icon: '📊',
+    title: 'Portfolio Analytics',
+    subtitle: 'Analisi professionale del tuo portfolio con metriche avanzate usate dai trader istituzionali. Grafici interattivi, indicatori tecnici e report esportabili.',
+    features: [
+      'ROI, Sharpe Ratio, Sortino Ratio e Max Drawdown in tempo reale',
+      'Indicatori tecnici: SMA, EMA, RSI, MACD, Bollinger Bands',
+      'Grafici candlestick con timeframe da 1 minuto a 1 anno',
+      'Analisi allocazione portfolio per asset e blockchain',
+      'Report PDF mensile e annuale con riepilogo fiscale',
+      'Confronto performance vs benchmark (BTC, ETH, S&P500)'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📊 Scopri Analytics', href: '#app', primary: false }]
+  },
+  trading: {
+    icon: '🔄',
+    title: 'Swap & Trading',
+    subtitle: 'Accedi ai migliori DEX aggregati in un’unica interfaccia. Esegui swap, piazza ordini limite e partecipa al yield farming con le migliori condizioni di mercato.',
+    features: [
+      'Aggregatore DEX: Uniswap, PancakeSwap, Curve, SushiSwap',
+      'Ordini limite e stop-loss su tutti i token supportati',
+      'Copy trading: replica automaticamente i portafogli top trader',
+      'Yield farming su 8 pool con APY aggiornato in tempo reale',
+      'Slippage configurabile e protezione MEV integrata',
+      'Storico completo di tutti gli swap con P&L per operazione'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
+  },
+  multichain: {
+    icon: '🌐',
+    title: 'Multi-Chain',
+    subtitle: 'Gestisci asset su 5 blockchain diverse da un’unica app. Consolida il tuo portfolio cross-chain e trasferisci fondi tra reti con un solo tap.',
+    features: [
+      'Supporto nativo per Ethereum, Polygon, BSC, Solana e Arbitrum',
+      'Bridge cross-chain integrato per trasferimenti tra reti',
+      'Saldo consolidato in EUR/USD su tutte le blockchain',
+      'Gas fee ottimizzate con suggerimento rete più economica',
+      'NFT viewer per tutti gli asset su tutte le reti supportate',
+      'Aggiornamento prezzi in tempo reale via WebSocket'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
+  },
+  banking: {
+    icon: '🏦',
+    title: 'Banking Integration',
+    subtitle: 'Collega il tuo conto bancario tradizionale al wallet crypto. Trasferisci fondi, valida IBAN e monitora tutti i movimenti in un’unica piattaforma.',
+    features: [
+      'Integrazione Stripe per pagamenti con carta di credito/debito',
+      'Bonifici SEPA tramite Wise con commissioni ridotte',
+      'Validazione IBAN in tempo reale per 36 paesi europei',
+      'Giro di fondo automatico: sweep eccedenza su conto risparmio',
+      'Notifiche push per ogni movimento bancario in entrata/uscita',
+      'Storico movimenti unificato crypto + bancario con export CSV'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '🌐 FSL Ditta', href: 'https://fslditta.com', primary: false }]
+  },
+  notifications: {
+    icon: '📱',
+    title: 'Push Notifications',
+    subtitle: 'Resta sempre aggiornato con notifiche push intelligenti. Prezzi, ordini, scadenze e alert personalizzabili direttamente sul tuo dispositivo.',
+    features: [
+      'Alert prezzo crypto con soglie personalizzabili per asset',
+      'Notifiche ordini: eseguito, parziale, cancellato',
+      'Promemoria scadenze bonifici ricorrenti con countdown',
+      'Alert saldo sotto soglia e giro di fondo automatico',
+      'Avvisi budget categoria quando si supera 80% o 100%',
+      'Centro notifiche integrato con storico e filtri per tipo'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
+  },
+  social: {
+    icon: '🤝',
+    title: 'Social & Referral',
+    subtitle: 'Condividi i tuoi successi e guadagna con il programma referral a 4 livelli. Costruisci la tua rete e scala verso il tier Platinum.',
+    features: [
+      'Condivisione portfolio su Twitter, Telegram e WhatsApp con un tap',
+      'Programma referral a 4 tier: Bronze, Silver, Gold, Platinum',
+      'Commissioni crescenti: 1% → 2.5% sulle fee dei referral',
+      'Leaderboard globale con classifica top trader del mese',
+      'Badge e achievement per milestone raggiunte',
+      'Link referral personalizzato con tracking conversioni'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
+  },
+  security: {
+    icon: '🛡️',
+    title: 'Sicurezza Avanzata',
+    subtitle: 'Protezione multi-livello per i tuoi asset digitali. Dalla crittografia end-to-end all’2FA, ogni strato è progettato per garantire la massima sicurezza.',
+    features: [
+      '2FA con SMS, Email e Authenticator (TOTP/HOTP)',
+      'Crittografia end-to-end AES-256 per tutti i dati sensibili',
+      'Gestione sessioni con revoca remota e log accessi',
+      'Rilevamento anomalie: alert per accessi da nuovi dispositivi',
+      'Timeout automatico sessione configurabile (1-60 minuti)',
+      'Audit log completo di tutte le operazioni con timestamp'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '🌐 FSL Ditta', href: 'https://fslditta.com', primary: false }]
+  }
+};
+
+function openModal(key) {
+  const data = MODALS[key];
+  if (!data) return;
+  document.getElementById('modal-icon').textContent = data.icon;
+  document.getElementById('modal-title').textContent = data.title;
+  document.getElementById('modal-subtitle').textContent = data.subtitle;
+  const ul = document.getElementById('modal-features');
+  ul.innerHTML = data.features.map(f => `<li>${f}</li>`).join('');
+  const ctaDiv = document.getElementById('modal-cta');
+  ctaDiv.innerHTML = data.cta.map(c =>
+    `<a href="${c.href}" class="${c.primary ? 'cta-primary' : 'cta-secondary'}" ${c.href.startsWith('http') ? 'target="_blank"' : ''}>${c.label}</a>`
+  ).join('');
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
 
 </body>
 </html>
