@@ -281,6 +281,7 @@
     <a href="#roadmap">Roadmap</a>
     <a href="#team">Team</a>
     <a href="#tech">Tecnologia</a>
+    <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
   </div>
@@ -626,6 +627,91 @@
     </div>
   </div>
 </section>
+
+<!-- CONTATTI / DEMO -->
+<section id="contact" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center;">
+  <div class="section-label">Contatti</div>
+  <h2 class="section-title">Richiedi una Demo</h2>
+  <p class="section-subtitle">
+    Sei un investitore, un partner bancario o vuoi integrare AgentPay nella tua azienda?
+    Contattaci per una demo personalizzata.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 3rem 0;">
+    <!-- Card Email -->
+    <a href="mailto:info@fslditta.com" style="text-decoration: none;">
+      <div class="feature-card" style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 30px rgba(0,200,255,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="feature-icon">📧</div>
+        <h3 class="feature-title">Email</h3>
+        <p class="feature-desc">info@fslditta.com<br>Risposta entro 24h</p>
+      </div>
+    </a>
+    <!-- Card Telegram -->
+    <a href="https://t.me/fslmultiservice" target="_blank" rel="noopener" style="text-decoration: none;">
+      <div class="feature-card" style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 30px rgba(0,200,255,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="feature-icon">✈️</div>
+        <h3 class="feature-title">Telegram</h3>
+        <p class="feature-desc">@fslmultiservice<br>Risposta immediata</p>
+      </div>
+    </a>
+    <!-- Card GitHub -->
+    <a href="https://github.com/fslmultiservice22" target="_blank" rel="noopener" style="text-decoration: none;">
+      <div class="feature-card" style="cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 30px rgba(0,200,255,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div class="feature-icon">🐙</div>
+        <h3 class="feature-title">GitHub</h3>
+        <p class="feature-desc">fslmultiservice22<br>Codice &amp; Documentazione</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Form contatto -->
+  <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 2.5rem; max-width: 600px; margin: 0 auto; text-align: left;">
+    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary);">Invia un messaggio</h3>
+    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Nome</label>
+          <input type="text" id="cf-name" required placeholder="Mario Rossi" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Email</label>
+          <input type="email" id="cf-email" required placeholder="mario@azienda.com" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
+        </div>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Tipo di interesse</label>
+        <select id="cf-type" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none;">
+          <option value="demo">Richiesta Demo</option>
+          <option value="investor">Investitore</option>
+          <option value="partner">Partner Bancario</option>
+          <option value="integration">Integrazione API</option>
+          <option value="other">Altro</option>
+        </select>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Messaggio</label>
+        <textarea id="cf-message" required rows="4" placeholder="Descrivi brevemente il tuo interesse o la tua domanda..." style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Invia Messaggio ✉️</button>
+      <div id="cf-success" style="display: none; margin-top: 1rem; padding: 12px; background: rgba(34,197,94,0.1); border: 1px solid #22C55E; border-radius: 10px; color: #22C55E; font-size: 0.9rem; text-align: center;">✅ Messaggio inviato! Ti risponderemo entro 24h.</div>
+    </form>
+  </div>
+</section>
+
+<script>
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('cf-name').value;
+  const email = document.getElementById('cf-email').value;
+  const type = document.getElementById('cf-type').value;
+  const message = document.getElementById('cf-message').value;
+  const subject = encodeURIComponent('[AgentPay Demo] ' + type + ' - ' + name);
+  const body = encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\nTipo: ' + type + '\n\nMessaggio:\n' + message);
+  window.location.href = 'mailto:info@fslditta.com?subject=' + subject + '&body=' + body;
+  document.getElementById('cf-success').style.display = 'block';
+  document.getElementById('contactForm').reset();
+}
+</script>
 
 <!-- TECH STACK -->
 <section id="tech">
