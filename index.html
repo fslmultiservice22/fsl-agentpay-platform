@@ -290,6 +290,7 @@
           <a class="nav-link" href="#sicurezza">Sicurezza</a>
           <a href="#roadmap-pubblica">Roadmap</a>
           <a href="#statistiche-live">Statistiche</a>
+          <a href="#newsletter">Newsletter</a>
     <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
@@ -1043,7 +1044,87 @@
   </div>
 </section>
 
-<!-- CONTATTI / DEMO -->
+<!-- NEWSLETTER -->
+<section id="newsletter" style="padding: 5rem 2rem; background: var(--bg);">
+  <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <div class="section-label">Resta aggiornato</div>
+    <h2 class="section-title">Newsletter AgentPay</h2>
+    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin: 1rem 0 2rem;">
+      Ricevi una notifica quando rilasciamo nuove funzionalità, aggiornamenti dell'app e notizie dal progetto. Niente spam, solo aggiornamenti importanti.
+    </p>
+    <form
+      action="https://formspree.io/f/xpwzgqvj"
+      method="POST"
+      id="newsletter-form"
+      style="display: flex; flex-direction: column; gap: 1rem; max-width: 480px; margin: 0 auto;"
+    >
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <input
+          type="text"
+          name="name"
+          placeholder="Il tuo nome"
+          required
+          style="flex: 1; min-width: 140px; padding: 0.85rem 1.2rem; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.95rem; outline: none;"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="La tua email"
+          required
+          style="flex: 2; min-width: 200px; padding: 0.85rem 1.2rem; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.95rem; outline: none;"
+        />
+      </div>
+      <select
+        name="interest"
+        style="padding: 0.85rem 1.2rem; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.95rem; outline: none;"
+      >
+        <option value="tutto">Tutti gli aggiornamenti</option>
+        <option value="app">Solo aggiornamenti app</option>
+        <option value="sito">Solo aggiornamenti sito</option>
+        <option value="release">Solo nuove release</option>
+      </select>
+      <input type="hidden" name="_subject" value="Nuova iscrizione newsletter AgentPay" />
+      <input type="hidden" name="_next" value="https://agentpay.fslditta.com/#newsletter" />
+      <button
+        type="submit"
+        style="background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s;"
+        onmouseover="this.style.opacity='0.85'"
+        onmouseout="this.style.opacity='1'"
+      >
+        📬 Iscriviti alla newsletter
+      </button>
+    </form>
+    <div id="newsletter-success" style="display:none; margin-top: 1.5rem; padding: 1rem 1.5rem; background: #22c55e22; border: 1px solid #22c55e55; border-radius: 12px; color: #22c55e; font-weight: 600;">
+      ✅ Iscrizione completata! Ti contatteremo presto.
+    </div>
+    <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted);">
+      Puoi disiscriverti in qualsiasi momento. I tuoi dati non vengono condivisi con terze parti.
+    </p>
+  </div>
+</section>
+<script>
+(function() {
+  var form = document.getElementById('newsletter-form');
+  var success = document.getElementById('newsletter-success');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      }
+    }).catch(function() {});
+  });
+})();
+</script>
+
+<!-- CONTACT -->
 <section id="contact" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center;">
   <div class="section-label">Contatti</div>
   <h2 class="section-title">Richiedi una Demo</h2>
