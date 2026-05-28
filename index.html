@@ -284,6 +284,7 @@
     <a href="#tech">Tecnologia</a>
     <a href="#download-app">Download</a>
     <a href="#faq">FAQ</a>
+    <a href="#changelog">Changelog</a>
     <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
@@ -1239,6 +1240,74 @@ function handleContactSubmit(e) {
       if (!isOpen) item.classList.add('open');
     }
   </script>
+</section>
+
+<!-- Changelog -->
+<section id="changelog" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <div class="section-label">Aggiornamenti</div>
+    <h2 class="section-title">Changelog</h2>
+    <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.75rem;">Cronologia delle versioni e novità dell'app AgentPay</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid var(--accent);">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">NUOVO</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Sessione v51 &mdash; Report Fiscale &amp; Flusso di Cassa</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Maggio 2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/tax-report</strong> con calcolo IRPEF, capital gain crypto 26% e scaglioni fiscali 2024</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>TaxSummaryWidget</strong> nella Home con stima imposte annuali</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>CashFlowWidget</strong> con flusso netto mensile e trend vs mese precedente</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>MonthlyIncomeWidget</strong> con confronto entrate mese corrente/precedente</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid #22C55E;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: #22C55E; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v50</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Report Finanziario Annuale &amp; Sezione Download</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Maggio 2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/financial-report</strong> con grafico mensile 12 mesi, highlights e export CSV</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Sezione Download sito con badge App Store/Google Play e QR Expo Go</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Dominio personalizzato <strong>agentpay.fslditta.com</strong> configurato su Cloudflare</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid #3B82F6;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: #3B82F6; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v49</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Calendario Finanziario &amp; FAQ</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Maggio 2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/financial-calendar</strong> con vista mensile e badge entrate/uscite/ricorrenti</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Sezione FAQ con 8 domande in accordion</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Navbar aggiornata con link FAQ e Download</li>
+      </ul>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid var(--text-muted);">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: var(--text-muted); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v1&ndash;v48</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Versioni precedenti</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">2025&ndash;2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Wallet multi-account con bonifici SEPA e crypto</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Dashboard con widget personalizzabili, budget, obiettivi e ricorrenti</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Autenticazione biometrica, PIN, notifiche push e modalità offline</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Integrazione blockchain Solana, convertitore valute e analisi spese</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" style="color: var(--accent);">Vedi tutti i commit su GitHub &rarr;</a></li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <!-- CTA -->
