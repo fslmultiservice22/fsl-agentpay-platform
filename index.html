@@ -282,6 +282,7 @@
     <a href="#roadmap">Roadmap</a>
     <a href="#team">Team</a>
     <a href="#tech">Tecnologia</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
@@ -931,6 +932,135 @@ function handleContactSubmit(e) {
       <span class="api-desc">Status piattaforma</span>
     </div>
   </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto;">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Domande Frequenti</h2>
+  <p class="section-subtitle" style="color: #94a3b8; margin-bottom: 3rem;">Tutto quello che devi sapere su AgentPay Wallet.</p>
+
+  <style>
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--primary); }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: #60a5fa; }
+    .faq-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s;
+      padding: 0 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.25rem;
+    }
+  </style>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Cos’è AgentPay Wallet?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">AgentPay Wallet è un’app mobile per iOS e Android che ti permette di gestire le tue finanze personali in modo intelligente: conti bancari, bonifici SEPA, crypto, budget mensili, obiettivi di risparmio e notifiche automatiche. È sviluppata con React Native ed Expo SDK 54, con dati conservati localmente sul tuo dispositivo.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>I miei dati sono al sicuro?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">Sì. Tutti i dati finanziari (conti, trasferimenti, budget) sono salvati localmente sul tuo dispositivo tramite AsyncStorage cifrato. Non vengono inviati a server di terze parti. Le chiavi del wallet crypto sono generate e conservate esclusivamente sul dispositivo, con supporto per autenticazione biometrica (Face ID / Touch ID).</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Con quali banche è compatibile?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">AgentPay Wallet è compatibile con qualsiasi conto bancario che supporta bonifici SEPA. Puoi aggiungere manualmente i tuoi conti e registrare entrate e uscite. L’integrazione con Open Banking (PSD2) per la sincronizzazione automatica è in roadmap per le versioni future.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Come funzionano le notifiche?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">L’app invia notifiche push locali per: accrediti in arrivo, pagamenti ricorrenti in scadenza, superamento del budget mensile, saldo sotto soglia e report settimanale delle entrate. Puoi personalizzare ogni tipo di notifica dalle Impostazioni Avanzate dell’app.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Supporta le criptovalute?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">Sì. AgentPay Wallet include un wallet self-custodial multi-chain con supporto per Ethereum, Polygon, Arbitrum e Optimism. Puoi convertire valute tramite il convertitore integrato con prezzi in tempo reale di BTC ed ETH via CoinGecko. Il trading DeFi e lo swap DEX sono in sviluppo attivo.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Come vengono gestiti i miei dati personali?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">AgentPay Wallet rispetta il GDPR. I dati rimangono sul tuo dispositivo e non vengono condivisi con terze parti senza consenso esplicito. Puoi esportare o eliminare tutti i tuoi dati in qualsiasi momento dalle impostazioni. Consulta la nostra <a href="/privacy.html" style="color:#60a5fa;">Privacy Policy</a> per tutti i dettagli.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>L’app è gratuita?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">Sì, AgentPay Wallet è completamente gratuita. Il codice sorgente è disponibile su GitHub. Non ci sono abbonamenti, commissioni nascoste o acquisti in-app. Il progetto è sviluppato da FSL Multiservice come piattaforma open source per la gestione finanziaria personale.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <button class="faq-question">
+      <span>Su quali dispositivi funziona?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">AgentPay Wallet è disponibile per iOS (iPhone con iOS 16+) e Android (Android 7.0+). È sviluppata con React Native ed Expo, garantendo un’esperienza nativa su entrambe le piattaforme. Puoi già provare l’app tramite Expo Go scansionando il QR code nella pagina GitHub del progetto.</div>
+  </div>
+
+  <script>
+    function toggleFaq(item) {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
 </section>
 
 <!-- CTA -->
