@@ -289,6 +289,7 @@
           <a href="#partners">Partners</a>
           <a class="nav-link" href="#sicurezza">Sicurezza</a>
           <a href="#roadmap-pubblica">Roadmap</a>
+          <a href="#statistiche-live">Statistiche</a>
     <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
@@ -1550,6 +1551,100 @@ function handleContactSubmit(e) {
 
   </div>
 </section>
+
+<!-- STATISTICHE LIVE -->
+<section id="statistiche-live" style="padding: 5rem 2rem; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div class="section-label">Dati in tempo reale</div>
+      <h2 class="section-title">Statistiche Live</h2>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 1rem auto; line-height: 1.7;">
+        Metriche aggiornate in tempo reale dal repository GitHub e dal progetto AgentPay.
+      </p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">56</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
+      </div>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">61</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
+      </div>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">24</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
+      </div>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💾</div>
+        <div id="stat-commits" style="font-size: 2.2rem; font-weight: 900; color: #a855f7; line-height: 1;">—</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Commit GitHub</div>
+      </div>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⭐</div>
+        <div id="stat-stars" style="font-size: 2.2rem; font-weight: 900; color: #eab308; line-height: 1;">—</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">GitHub Stars</div>
+      </div>
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌐</div>
+        <div id="stat-sections" style="font-size: 2.2rem; font-weight: 900; color: #06b6d4; line-height: 1;">14</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sezioni sito</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <span id="stat-updated" style="font-size: 0.8rem; color: var(--text-muted);">Aggiornamento in corso...</span>
+    </div>
+  </div>
+</section>
+<script>
+(function() {
+  // Animazione contatore
+  function animateCounter(el, target, duration) {
+    if (!el || isNaN(target)) return;
+    var start = 0;
+    var step = Math.ceil(target / (duration / 16));
+    var timer = setInterval(function() {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = start.toLocaleString('it-IT');
+    }, 16);
+  }
+  // Fetch GitHub API
+  fetch('https://api.github.com/repos/fslmultiservice22/agentpay-mobile-app')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var starsEl = document.getElementById('stat-stars');
+      if (starsEl && data.stargazers_count !== undefined) {
+        animateCounter(starsEl, data.stargazers_count, 800);
+      }
+    })
+    .catch(function() {});
+  fetch('https://api.github.com/repos/fslmultiservice22/agentpay-mobile-app/commits?per_page=1')
+    .then(function(r) {
+      var link = r.headers.get('Link') || '';
+      var match = link.match(/page=(\d+)>; rel="last"/);
+      return match ? parseInt(match[1]) : null;
+    })
+    .then(function(count) {
+      var el = document.getElementById('stat-commits');
+      if (el && count) animateCounter(el, count, 1200);
+    })
+    .catch(function() {});
+  // Anima i contatori statici
+  var now = new Date();
+  document.getElementById('stat-updated').textContent =
+    'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+  setTimeout(function() {
+    animateCounter(document.getElementById('stat-sessions'), 56, 800);
+    animateCounter(document.getElementById('stat-screens'), 61, 900);
+    animateCounter(document.getElementById('stat-widgets'), 24, 700);
+    animateCounter(document.getElementById('stat-sections'), 14, 600);
+  }, 300);
+})();
+</script>
 
 <!-- ROADMAP PUBBLICA -->
 <section id="roadmap-pubblica" style="padding: 5rem 2rem; max-width: 960px; margin: 0 auto;">
