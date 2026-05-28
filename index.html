@@ -1711,11 +1711,24 @@ function handleContactSubmit(e) {
     <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.75rem;">Cronologia delle versioni e novità dell'app AgentPay</p>
   </div>
 
-  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v66 -->
     <div style="background: linear-gradient(135deg, rgba(255,107,53,0.1), var(--bg-card)); border: 1px solid rgba(255,107,53,0.4); border-radius: 16px; padding: 1.5rem; border-left: 4px solid var(--accent);">
       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
-        <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v65 ★ NUOVO</span>
+        <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v66 ★ NUOVO</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Carbon Footprint &amp; Widget CO&#x2082;</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Maggio 2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/carbon-footprint</strong>: calcolatore CO&#x2082; per trasporti, energia, alimentazione e acquisti con confronto vs media italiana</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>CarbonFootprintWidget</strong>: CO&#x2082; mensile stimata, % vs media IT (800 kg/mese), categoria principale con icona</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Statistiche live aggiornate: <strong>66 sessioni, 69 schermate, 34 widget</strong></li>
+      </ul>
+    </div>
+    <!-- v65 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid #f59e0b;">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: #f59e0b; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v65</span>
         <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Sfida Risparmio &amp; Widget SavingsChallenge</span>
         <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Maggio 2026</span>
       </div>
@@ -1969,17 +1982,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">65</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">66</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">68</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">69</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">33</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">34</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2042,9 +2055,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 65, 800);
-    animateCounter(document.getElementById('stat-screens'), 68, 900);
-    animateCounter(document.getElementById('stat-widgets'), 33, 700);
+    animateCounter(document.getElementById('stat-sessions'), 66, 800);
+    animateCounter(document.getElementById('stat-screens'), 69, 900);
+    animateCounter(document.getElementById('stat-widgets'), 34, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
