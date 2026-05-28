@@ -286,6 +286,7 @@
     <a href="#faq">FAQ</a>
     <a href="#changelog">Changelog</a>
     <a href="#presskit">Press Kit</a>
+          <a class="nav-link" href="#sicurezza">Sicurezza</a>
     <a href="#contact">Contatti</a>
     <a href="#api">API</a>
     <a href="https://fslditta.com" target="_blank">FSL Ditta</a>
@@ -390,7 +391,64 @@
       </div>
     </div>
   </div>
-  <!-- CTA -->
+  <!-- SICUREZZA -->
+<section id="sicurezza" style="padding: 5rem 2rem; max-width: 960px; margin: 0 auto;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <div class="section-label">&#128274; Sicurezza</div>
+    <h2 class="section-title">La Tua Sicurezza, la Nostra Priorità</h2>
+    <p style="font-size: 1.1rem; color: var(--text-muted); margin: 1.5rem auto 0; max-width: 650px; line-height: 1.7;">
+      AgentPay è progettato con un modello <strong>self-custodial</strong>: le tue chiavi private non lasciano mai il tuo dispositivo.
+    </p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128272;</div>
+      <h3 style="color: var(--text-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Modello Self-Custodial</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Le chiavi private sono generate e conservate esclusivamente sul tuo dispositivo tramite Secure Enclave (iOS) e Android Keystore. Nessun server di terze parti ha mai accesso alle tue chiavi.</p>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128737;</div>
+      <h3 style="color: var(--text-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Crittografia Locale AES-256</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Tutti i dati sensibili (saldi, transazioni, credenziali) sono cifrati con AES-256-GCM direttamente sul dispositivo. I dati in transito sono protetti da TLS 1.3.</p>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128065;&#65039;</div>
+      <h3 style="color: var(--text-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Autenticazione Biometrica</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Accesso protetto da Face ID, Touch ID o PIN. Ogni transazione può richiedere una conferma biometrica aggiuntiva per prevenire accessi non autorizzati.</p>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128737;&#65039;</div>
+      <h3 style="color: var(--text-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Nessun Dato su Server Terzi</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">AgentPay non vende, non condivide e non trasmette i tuoi dati finanziari a terze parti. I dati rimangono sul tuo dispositivo e vengono sincronizzati solo con i tuoi conti bancari.</p>
+    </div>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#128196;</div>
+      <h3 style="color: var(--text-primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Open Source &amp; Verificabile</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Il codice sorgente è pubblico su GitHub. Chiunque può verificare l'implementazione della sicurezza, contribuire al progetto e segnalare vulnerabilità responsabilmente.</p>
+    </div>
+
+    <div style="background: linear-gradient(135deg, var(--accent) 0%, #0ea5e9 100%); border-radius: 16px; padding: 1.5rem; color: #fff;">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">&#9989;</div>
+      <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Conformità &amp; Standard</h3>
+      <p style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9; margin-bottom: 1rem;">Progettato in conformità con GDPR, PSD2 e le linee guida di sicurezza Apple e Google per le applicazioni finanziarie.</p>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">GDPR</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">PSD2</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">TLS 1.3</span>
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">AES-256</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
   <div style="margin-top: 3rem;">
     <a href="#contact" class="btn-primary" style="display: inline-block; text-decoration: none;">Inizia ora &mdash; &egrave; gratuito</a>
   </div>
