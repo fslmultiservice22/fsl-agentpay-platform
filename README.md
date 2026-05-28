@@ -2,7 +2,7 @@
 
 **Piattaforma integrata FSL Ditta + AgentPay Wallet**
 
-🌐 **Live:** [app.fslditta.com](https://app.fslditta.com)
+🌐 **Live:** [agentpay.fslditta.com](https://agentpay.fslditta.com)
 
 ## Descrizione
 
