@@ -1906,17 +1906,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">56</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">64</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">61</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">67</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">24</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">32</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -1931,7 +1931,7 @@ function handleContactSubmit(e) {
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌐</div>
-        <div id="stat-sections" style="font-size: 2.2rem; font-weight: 900; color: #06b6d4; line-height: 1;">14</div>
+        <div id="stat-sections" style="font-size: 2.2rem; font-weight: 900; color: #06b6d4; line-height: 1;">21</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sezioni sito</div>
       </div>
     </div>
@@ -1979,10 +1979,10 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 56, 800);
-    animateCounter(document.getElementById('stat-screens'), 61, 900);
-    animateCounter(document.getElementById('stat-widgets'), 24, 700);
-    animateCounter(document.getElementById('stat-sections'), 14, 600);
+    animateCounter(document.getElementById('stat-sessions'), 64, 800);
+    animateCounter(document.getElementById('stat-screens'), 67, 900);
+    animateCounter(document.getElementById('stat-widgets'), 32, 700);
+    animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
 </script>
