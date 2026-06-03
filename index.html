@@ -1712,7 +1712,20 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    <!-- v72 -->
+    <!-- v73 -->
+              <div class="changelog-entry">
+                <div class="changelog-version">v73</div>
+                <div class="changelog-content">
+                  <div class="changelog-title">Piano risparmio, Budget vs Reale e Tendenze di spesa</div>
+                  <ul>
+                    <li>Schermata <strong>/savings-plan</strong>: piano risparmio automatico con slider priorità per ogni obiettivo</li>
+                    <li>Widget <strong>BudgetVsActualWidget</strong>: categoria più sforata del mese con semaforo colorato 🔴🟡🟢</li>
+                    <li>Schermata <strong>/expense-trends</strong>: grafico a barre per categoria su 3/6/12 mesi con insight automatico</li>
+                    <li>TypeScript: 0 errori · 77 schermate · 39 widget</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- v72 -->
               <div class="changelog-entry">
                 <div class="changelog-version">v72</div>
                 <div class="changelog-content">
@@ -2062,17 +2075,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">72</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">73</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">75</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">77</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">38</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">39</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2135,9 +2148,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 72, 800);
-    animateCounter(document.getElementById('stat-screens'), 75, 900);
-    animateCounter(document.getElementById('stat-widgets'), 38, 700);
+    animateCounter(document.getElementById('stat-sessions'), 73, 800);
+    animateCounter(document.getElementById('stat-screens'), 77, 900);
+    animateCounter(document.getElementById('stat-widgets'), 39, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
