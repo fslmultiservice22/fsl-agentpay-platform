@@ -1712,8 +1712,22 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    <!-- v66 -->
+    <!-- v67 -->
     <div style="background: linear-gradient(135deg, rgba(255,107,53,0.1), var(--bg-card)); border: 1px solid rgba(255,107,53,0.4); border-radius: 16px; padding: 1.5rem; border-left: 4px solid var(--accent);">
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v67 &#9733; NUOVO</span>
+        <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Budget Abbonamenti &amp; Widget SubscriptionBudget</span>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: auto;">Giugno 2026</span>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/subscription-budget</strong>: budget mensile abbonamenti con barra progresso colorata, alert sforamento, dettaglio per abbonamento e suggerimenti risparmio</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>SubscriptionBudgetWidget</strong>: spesa mensile vs budget, barra verde/arancio/rosso, contatore abbonamenti attivi</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Fix critico Android: rimosso loading state in BlockchainProvider che causava white screen all'avvio</li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Statistiche live aggiornate: <strong>67 sessioni, 70 schermate, 35 widget</strong></li>
+      </ul>
+    </div>
+    <!-- v66 -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; border-left: 4px solid var(--accent);">
       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
         <span style="background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px;">v66 ★ NUOVO</span>
         <span style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Carbon Footprint &amp; Widget CO&#x2082;</span>
@@ -1982,17 +1996,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">66</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">67</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">69</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">70</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">34</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">35</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2055,9 +2069,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 66, 800);
-    animateCounter(document.getElementById('stat-screens'), 69, 900);
-    animateCounter(document.getElementById('stat-widgets'), 34, 700);
+    animateCounter(document.getElementById('stat-sessions'), 67, 800);
+    animateCounter(document.getElementById('stat-screens'), 70, 900);
+    animateCounter(document.getElementById('stat-widgets'), 35, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
