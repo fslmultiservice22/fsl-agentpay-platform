@@ -1712,6 +1712,30 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v80 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v80</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Tooltip sparkline, debt-tracker avanzato, SavingsRateWidget</div>
+        <ul class="changelog-list">
+          <li>Tooltip interattivo sulla sparkline del <strong>NetWorthHistoryWidget</strong>: tocco mostra il valore esatto del mese selezionato sopra il dot (PanResponder)</li>
+          <li>Schermata <strong>/debt-tracker</strong> arricchita: campi opzionali prestito strutturato (importo originale, tasso interesse annuo, data scadenza), progress bar estinzione, badge interessi mensili, rata stimata con formula di ammortamento</li>
+          <li>Widget <strong>SavingsRateWidget</strong>: semaforo 🟢🟡🔴, tasso di risparmio mensile (entrate−uscite/entrate), obiettivo personalizzabile, dettaglio entrate/uscite/risparmiato</li>
+          <li>44 widget totali · 82 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
+    <!-- v79 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v79</div>
+      <div class="changelog-content">
+        <div class="changelog-title">NetWorthHistoryWidget con sparkline SVG a 6 mesi</div>
+        <ul class="changelog-list">
+          <li>Widget <strong>NetWorthHistoryWidget</strong> arricchito con sparkline SVG: grafico a linee degli ultimi 6 mesi, dot sull'ultimo punto, etichette mesi, colore dinamico in base al trend</li>
+          <li>43 widget totali · 82 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
     <!-- v78 -->
     <div class="changelog-entry">
       <div class="changelog-version">v78</div>
@@ -2208,9 +2232,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 78, 800);
+    animateCounter(document.getElementById('stat-sessions'), 80, 800);
     animateCounter(document.getElementById('stat-screens'), 82, 900);
-    animateCounter(document.getElementById('stat-widgets'), 43, 700);
+    animateCounter(document.getElementById('stat-widgets'), 44, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
