@@ -2054,12 +2054,12 @@ function handleContactSubmit(e) {
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">71</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">74</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">37</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">38</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2122,9 +2122,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 70, 800);
-    animateCounter(document.getElementById('stat-screens'), 71, 900);
-    animateCounter(document.getElementById('stat-widgets'), 37, 700);
+    animateCounter(document.getElementById('stat-sessions'), 71, 800);
+    animateCounter(document.getElementById('stat-screens'), 74, 900);
+    animateCounter(document.getElementById('stat-widgets'), 38, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
