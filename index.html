@@ -1712,6 +1712,29 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v78 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v78</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Punti fedeltà e widget dedicato</div>
+        <ul class="changelog-list">
+          <li>Schermata <strong>/loyalty-points</strong>: gestione programmi fedeltà (Esselunga Fìdaty, CartaFRECCIA, ecc.) con calcolo valore stimato, storico operazioni, preset popolari</li>
+          <li>Widget <strong>LoyaltyPointsWidget</strong>: punti totali e valore stimato in euro di tutti i programmi attivi</li>
+          <li>43 widget totali · 82 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
+    <!-- v77 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v77</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Divisione spese di gruppo</div>
+        <ul class="changelog-list">
+          <li>Schermata <strong>/bill-splitter</strong>: divisione spese di gruppo con calcolo automatico chi deve cosa a chi, gestione partecipanti, stato saldato/in sospeso, settlement ottimizzato</li>
+          <li>42 widget totali · 81 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
     <!-- v76 -->
     <div class="changelog-entry">
       <div class="changelog-version">v76</div>
@@ -2112,17 +2135,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">76</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">78</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">81</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">82</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">42</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">43</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2185,9 +2208,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 76, 800);
-    animateCounter(document.getElementById('stat-screens'), 81, 900);
-    animateCounter(document.getElementById('stat-widgets'), 42, 700);
+    animateCounter(document.getElementById('stat-sessions'), 78, 800);
+    animateCounter(document.getElementById('stat-screens'), 82, 900);
+    animateCounter(document.getElementById('stat-widgets'), 43, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
