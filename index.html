@@ -1712,6 +1712,31 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v76 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v76</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Patrimonio netto, divisione spese di gruppo</div>
+        <ul class="changelog-list">
+          <li>Widget <strong>NetWorthHistoryWidget</strong>: patrimonio netto attuale (conti + crypto + investimenti) con delta vs mese scorso e link a /net-worth-history</li>
+          <li>Schermata <strong>/bill-splitter</strong>: divisione spese di gruppo con calcolo automatico chi deve cosa a chi, gestione partecipanti, stato saldato/in sospeso</li>
+          <li>42 widget totali · 81 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
+    <!-- v75 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v75</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Flusso di cassa, storico patrimonio netto e notifiche</div>
+        <ul class="changelog-list">
+          <li>Widget <strong>CashFlowForecastWidget</strong>: flusso netto previsto 3 mesi con semaforo colorato</li>
+          <li>Schermata <strong>/net-worth-history</strong>: grafico storico 12 mesi patrimonio netto con tabella mensile</li>
+          <li>Servizio <strong>notifiche push flusso negativo</strong>: avviso quando il saldo previsto scende sotto zero</li>
+          <li>41 widget totali · 80 schermate · TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
     <!-- v73 -->
               <div class="changelog-entry">
                 
@@ -2087,17 +2112,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">75</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">76</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">80</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">81</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">41</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">42</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2160,9 +2185,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 74, 800);
-    animateCounter(document.getElementById('stat-screens'), 78, 900);
-    animateCounter(document.getElementById('stat-widgets'), 40, 700);
+    animateCounter(document.getElementById('stat-sessions'), 76, 800);
+    animateCounter(document.getElementById('stat-screens'), 81, 900);
+    animateCounter(document.getElementById('stat-widgets'), 42, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
