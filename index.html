@@ -1712,7 +1712,20 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    <!-- v71 -->
+    <!-- v72 -->
+              <div class="changelog-entry">
+                <div class="changelog-version">v72</div>
+                <div class="changelog-content">
+                  <div class="changelog-title">Storico contributi, notifiche obiettivi e controllo completo</div>
+                  <ul>
+                    <li>Schermata <strong>/goal-contributions-history</strong>: storico contributi per obiettivo con grafico a barre mensile</li>
+                    <li>Servizio <strong>notifiche push obiettivi</strong>: promemoria mensile, avviso scadenza 30/7gg, notifica completamento</li>
+                    <li>Controllo completo: <strong>75/75 schermate registrate</strong>, 38/38 widget coerenti, 744 test passati</li>
+                    <li>Fix statistiche sito web (75 schermate, 38 widget, 72 sessioni)</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- v71 -->
               <div class="changelog-entry">
                 <div class="changelog-version">v71</div>
                 <div class="changelog-content">
@@ -1735,7 +1748,7 @@ function handleContactSubmit(e) {
       <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
         <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Widget <strong>AnnualSummaryWidget</strong>: riepilogo anno corrente con entrate, uscite, risparmio netto e tasso risparmio %</li>
         <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Schermata <strong>/annual-summary</strong> completa: grafico 12 mesi, KPI, highlights, tabella mensile e export</li>
-        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Statistiche live: <strong>71 sessioni, 74 schermate, 38 widget</strong></li>
+        <li style="color: var(--text-muted); font-size: 0.95rem;">&#x2705; Statistiche live: <strong>72 sessioni, 75 schermate, 38 widget</strong></li>
       </ul>
     </div>
     <!-- v69 -->
@@ -2049,12 +2062,12 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">71</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">72</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">74</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">75</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2122,8 +2135,8 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 71, 800);
-    animateCounter(document.getElementById('stat-screens'), 74, 900);
+    animateCounter(document.getElementById('stat-sessions'), 72, 800);
+    animateCounter(document.getElementById('stat-screens'), 75, 900);
     animateCounter(document.getElementById('stat-widgets'), 38, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
