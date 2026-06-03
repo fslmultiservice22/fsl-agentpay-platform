@@ -1714,7 +1714,19 @@ function handleContactSubmit(e) {
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
     <!-- v73 -->
               <div class="changelog-entry">
-                <div class="changelog-version">v73</div>
+                
+              <div class="changelog-entry">
+                <div class="changelog-version">v74</div>
+                <div class="changelog-content">
+                  <div class="changelog-title">Fix ScrollView bianco Android + Cash Flow Forecast + ExpenseTrends</div>
+                  <ul class="changelog-list">
+                    <li>Fix audit: rimosso style={s.container} da ScrollView in 8 schermate tab (dashboard, gas-comparator, portfolio-multi, price-alerts, settings, swap-analytics, trading, kyc-process) che causava schermata bianca su Android</li>
+                    <li>Schermata /cash-flow-forecast: previsione flusso di cassa 3 mesi, KPI entrate/uscite, barra utilizzo, lista pagamenti ricorrenti per mese, alert saldo negativo</li>
+                    <li>Widget ExpenseTrendsWidget: categoria più in variazione del mese con freccia trend e variazione %</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="changelog-version">v73</div>
                 <div class="changelog-content">
                   <div class="changelog-title">Piano risparmio, Budget vs Reale e Tendenze di spesa</div>
                   <ul>
@@ -2075,7 +2087,7 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">73</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">74</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
