@@ -1712,6 +1712,31 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v83 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v83</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Audit completo: zero crash Android da emoji</div>
+        <ul class="changelog-list">
+          <li>Fix definitivo crash Android: <strong>203 emoji a fontSize &ge;18</strong> sostituite con <code>MaterialIcons</code> vettoriali in 66 file &mdash; eliminata la causa root di tutti i crash &ldquo;Something went wrong&rdquo;</li>
+          <li>Fix <strong>Swap Analytics</strong>: race condition nel hook <code>use-swap-analytics</code> corretta &mdash; <code>analytics</code> calcolato in modo sincrono prima di <code>isLoading=false</code></li>
+          <li>Creato <code>app/+not-found.tsx</code> branded AgentPay per gestire route non trovate e deep link vuoti <code>agentpay:///</code></li>
+          <li>Audit strutturale completo: 99 schermate, 45 widget, 0 route inesistenti, TypeScript 0 errori</li>
+        </ul>
+      </div>
+    </div>
+    <!-- v82 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v82</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Fix crash Swap Analytics e deep link</div>
+        <ul class="changelog-list">
+          <li>Fix crash <strong>Swap Analytics</strong>: race condition nel hook <code>use-swap-analytics</code> &mdash; <code>isLoading</code> diventava <code>false</code> prima che <code>analytics</code> fosse calcolato</li>
+          <li>Creato <code>app/+not-found.tsx</code> branded AgentPay: pagina &ldquo;Pagina non trovata&rdquo; in italiano con pulsante &ldquo;Torna alla Home&rdquo;</li>
+          <li>Fix prima serie emoji a fontSize &ge;32: 41 sostituzioni in 37 file con <code>MaterialIcons</code></li>
+        </ul>
+      </div>
+    </div>
     <!-- v81-fix -->
     <div class="changelog-entry">
       <div class="changelog-version">v81+</div>
