@@ -1712,6 +1712,18 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v81-fix -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v81+</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Fix crash deep link e audit completo</div>
+        <ul class="changelog-list">
+          <li>Fix critico <strong>Unmatched Route agentpay:///</strong>: il gestore <code>Linking.getInitialURL()</code> in <code>_layout.tsx</code> ora ignora URL vuoti/null, evitando conflitti con i redirect onboarding/biometrica</li>
+          <li>Audit completo: <strong>99 schermate totali</strong> (82 stack + 17 tab), 45 widget &mdash; tutti registrati e con render case corrispondente</li>
+          <li>TypeScript: 0 errori su tutto il progetto</li>
+        </ul>
+      </div>
+    </div>
     <!-- v81 -->
     <div class="changelog-entry">
       <div class="changelog-version">v81</div>
@@ -2178,7 +2190,7 @@ function handleContactSubmit(e) {
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">83</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">99</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2247,7 +2259,7 @@ function handleContactSubmit(e) {
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
     animateCounter(document.getElementById('stat-sessions'), 81, 800);
-    animateCounter(document.getElementById('stat-screens'), 83, 900);
+    animateCounter(document.getElementById('stat-screens'), 99, 900);
     animateCounter(document.getElementById('stat-widgets'), 45, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
