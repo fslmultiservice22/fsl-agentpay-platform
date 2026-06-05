@@ -1014,7 +1014,7 @@
         <img src="logo-icon.png" alt="AgentPay" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
       <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem;">AgentPay Wallet</h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 87+ sessioni di sviluppo, 102 schermate, 48 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 89+ sessioni di sviluppo, 105 schermate, 49 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
         <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" style="font-size: 0.8rem; color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 4px 12px; border-radius: 20px;">📦 Repository</a>
         <a href="#roadmap" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px;">🗺 Roadmap</a>
@@ -1712,6 +1712,33 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v89 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v89</div>
+      <div class="changelog-content">
+        <div class="changelog-title">SocialActivityWidget + /social-feed + condivisione da Obiettivi di Risparmio</div>
+        <ul class="changelog-list">
+          <li>Nuovo widget <strong>SocialActivityWidget</strong> nella Home: mostra ultimi 3 post condivisi e piattaforme connesse</li>
+          <li>Nuova schermata <strong>/social-feed</strong>: feed aggregato con filtro per piattaforma, elimina singolo post o tutti, stato vuoto con invito a connettere account</li>
+          <li>Condivisione manuale da <strong>/savings-goals</strong>: pulsante &ldquo;Condividi&rdquo; su ogni card con preview del post e scrittura in <code>agentpay_social_feed</code></li>
+          <li>Route <code>social-feed</code> registrata nel layout</li>
+          <li>11/11 test vitest passati &mdash; TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
+    <!-- v88 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v88</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Social Media Fase 31 &mdash; ricreate schermate social-login e social-settings</div>
+        <ul class="changelog-list">
+          <li>Ricreata schermata <strong>/social-login</strong>: connessione a 8 piattaforme (Twitter/X, Instagram, Facebook, Discord, Telegram, LinkedIn, TikTok, YouTube) con demo accounts in AsyncStorage</li>
+          <li>Ricreata schermata <strong>/social-settings</strong>: toggle per piattaforma, preferenze condivisione automatica (trade, milestone, achievement), controlli privacy</li>
+          <li>Link aggiunti in Impostazioni: &ldquo;Connetti Social Media&rdquo; e &ldquo;Impostazioni Social&rdquo;</li>
+          <li>20/20 test vitest passati</li>
+        </ul>
+      </div>
+    </div>
     <!-- v87 -->
     <div class="changelog-entry">
       <div class="changelog-version">v87</div>
