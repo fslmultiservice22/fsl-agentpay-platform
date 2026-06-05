@@ -1014,7 +1014,7 @@
         <img src="logo-icon.png" alt="AgentPay" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
       <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem;">AgentPay Wallet</h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 90+ sessioni di sviluppo, 105 schermate, 49 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 91+ sessioni di sviluppo, 106 schermate, 49 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
         <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" style="font-size: 0.8rem; color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 4px 12px; border-radius: 20px;">📦 Repository</a>
         <a href="#roadmap" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px;">🗺 Roadmap</a>
@@ -1712,6 +1712,20 @@ function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- v91 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v91</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Social Profile + PDF Export Financial Planner</div>
+        <ul class="changelog-list">
+          <li>Nuova schermata <strong>/social-profile</strong>: statistiche utente (piattaforme connesse, post condivisi, obiettivi), sezione milestone con traguardi raggiunti e prossimi</li>
+          <li>Pulsante &ldquo;Profilo&rdquo; nel header di <strong>/social-settings</strong>: navigazione rapida a /social-profile senza tornare alla Home</li>
+          <li>Funzione <strong>exportPDF</strong> in /financial-planner: salva report mensile completo (reddito, ricorrenti, obiettivi risparmio, tasso risparmio) in AsyncStorage con chiave <code>agentpay_pdf_export_{timestamp}</code></li>
+          <li>Pulsante PDF (icona picture-as-pdf, colore warning) nel header di /financial-planner</li>
+          <li>16/16 test vitest passati &mdash; TypeScript: 0 errori</li>
+        </ul>
+      </div>
+    </div>
     <!-- v90 -->
     <div class="changelog-entry">
       <div class="changelog-version">v90</div>
