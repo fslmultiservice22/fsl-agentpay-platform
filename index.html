@@ -1714,6 +1714,8 @@ function handleContactSubmit(e) {
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
     <div class="changelog-entry">
     <div class="changelog-entry">
+      <div class="changelog-version">v102</div>
+      <div class="changelog-desc">Social OAuth generico, Coda Pagamenti (/payment-queue), badge Home, "Aggiungi alla Coda"</div>
       <div class="changelog-version">v101</div>
       <div class="changelog-date">08 Giugno 2026</div>
       <div class="changelog-desc">Link navigazione Impostazioni, Alert Prezzi Token con notifiche push, Storico Transazioni EVM con filtri</div>
@@ -2401,12 +2403,12 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">81</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">102</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">99</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">103</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2474,8 +2476,8 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 81, 800);
-    animateCounter(document.getElementById('stat-screens'), 99, 900);
+    animateCounter(document.getElementById('stat-sessions'), 102, 800);
+    animateCounter(document.getElementById('stat-screens'), 103, 900);
     animateCounter(document.getElementById('stat-widgets'), 45, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
