@@ -1014,7 +1014,7 @@
         <img src="logo-icon.png" alt="AgentPay" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
       <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem;">AgentPay Wallet</h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 98+ sessioni di sviluppo, 117 schermate, 53 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.25rem;">L'app mobile nativa per la gestione finanziaria intelligente. Costruita con Expo SDK 54, React Native 0.81 e TypeScript. 103+ sessioni di sviluppo, 118 schermate, 53 widget, 0 errori TypeScript. Deploy su Cloudflare Pages.</p>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
         <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" style="font-size: 0.8rem; color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 4px 12px; border-radius: 20px;">📦 Repository</a>
         <a href="#roadmap" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px;">🗺 Roadmap</a>
@@ -1714,6 +1714,9 @@ function handleContactSubmit(e) {
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
     <div class="changelog-entry">
     <div class="changelog-entry">
+      <div class="changelog-version">v103</div>
+      <div class="changelog-date">08 Giugno 2026</div>
+      <div class="changelog-desc">Badge coda pagamenti tab Home, schedulazione data/ora pagamenti, conferma biometrica (Face ID/impronta), fix social media openBrowserAsync, controllo completo testi IT</div>
       <div class="changelog-version">v102</div>
       <div class="changelog-desc">Social OAuth generico, Coda Pagamenti (/payment-queue), badge Home, "Aggiungi alla Coda"</div>
       <div class="changelog-version">v101</div>
@@ -2403,17 +2406,17 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">102</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">103</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">103</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">118</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">45</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">53</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2476,9 +2479,9 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 102, 800);
-    animateCounter(document.getElementById('stat-screens'), 103, 900);
-    animateCounter(document.getElementById('stat-widgets'), 45, 700);
+    animateCounter(document.getElementById('stat-sessions'), 103, 800);
+    animateCounter(document.getElementById('stat-screens'), 118, 900);
+    animateCounter(document.getElementById('stat-widgets'), 53, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();
