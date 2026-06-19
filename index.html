@@ -1959,6 +1959,21 @@ function handleContactSubmit(e) {
         </ul>
       </div>
     </div>
+    <!-- v111 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v111</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Bug Fix Batch &mdash; Crash e stabilit&agrave;</div>
+        <ul class="changelog-list">
+          <li>Fix <strong>Multi Portfolio crash</strong>: guard total=0 in PieChart (evita NaN/SVG crash) + try/catch wrapper</li>
+          <li>Fix <strong>Swap Analytics crash</strong>: try/catch wrapper e null guards per rendering sicuro</li>
+          <li>Fix <strong>Wallet non connesso</strong>: sendTransfer ora lancia errore + handleReceivePayment usa WALLET_ADDRESS fallback</li>
+          <li>Fix <strong>IBAN virtuale</strong>: formato corretto CIN+ABI+CAB+Account (ISO 13616 mod 97)</li>
+          <li>Fix <strong>Autenticazione Biometrica</strong>: toggle ora persistito su AsyncStorage con haptic feedback</li>
+          <li>875 test passati &middot; 0 TypeScript errors</li>
+        </ul>
+      </div>
+    </div>
     <!-- v81-fix -->
     <div class="changelog-entry">
       <div class="changelog-version">v81+</div>
@@ -2432,7 +2447,7 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">110</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">111</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2505,7 +2520,7 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 110, 800);
+    animateCounter(document.getElementById('stat-sessions'), 111, 800);
     animateCounter(document.getElementById('stat-screens'), 106, 900);
     animateCounter(document.getElementById('stat-widgets'), 54, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
