@@ -1959,6 +1959,19 @@ function handleContactSubmit(e) {
         </ul>
       </div>
     </div>
+    <!-- v112 -->
+    <div class="changelog-entry">
+      <div class="changelog-version">v112</div>
+      <div class="changelog-content">
+        <div class="changelog-title">UX: Connetti Wallet &amp; Biometric Lock fix</div>
+        <ul class="changelog-list">
+          <li>Pulsante <strong>Importa Wallet</strong> nel pannello crypto: card con icona, testo guida e CTA quando nessun wallet &egrave; connesso</li>
+          <li>Fix <strong>biometric lock key mismatch</strong>: il pulsante "Disabilita blocco" nella lock screen ora scrive sulla chiave corretta (<code>agentpay_biometric_enabled</code>)</li>
+          <li>Flusso biometrico end-to-end verificato: toggle Settings &rarr; persistenza &rarr; _layout.tsx redirect &rarr; biometric-lock.tsx &rarr; sblocco</li>
+          <li>875 test passati &middot; 0 TypeScript errors</li>
+        </ul>
+      </div>
+    </div>
     <!-- v111 -->
     <div class="changelog-entry">
       <div class="changelog-version">v111</div>
@@ -2447,7 +2460,7 @@ function handleContactSubmit(e) {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">111</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">112</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
@@ -2520,7 +2533,7 @@ function handleContactSubmit(e) {
   document.getElementById('stat-updated').textContent =
     'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 111, 800);
+    animateCounter(document.getElementById('stat-sessions'), 112, 800);
     animateCounter(document.getElementById('stat-screens'), 106, 900);
     animateCounter(document.getElementById('stat-widgets'), 54, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
