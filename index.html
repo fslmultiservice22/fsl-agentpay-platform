@@ -702,7 +702,9 @@
   <h2 class="section-title">Tutto ciò di cui hai bisogno</h2>
   <p class="section-subtitle">
     Una piattaforma completa che combina la gestione professionale di FSL Ditta 
-    con le capacità avanzate del wallet AgentPay.
+    con le capacità avanzate del wallet AgentPay: trading con quotazioni reali,
+    social trading trasparente, verifica dell'identità multilivello e analisi di portafoglio
+    con grafici nativi, disponibili in 8 lingue.
   </p>
   
   <div class="features-grid">
@@ -722,13 +724,13 @@
       <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">📊</div>
       <h3 class="feature-title">Portfolio Analytics</h3>
-      <p class="feature-desc">Grafici avanzati con ROI, Sharpe Ratio, Max Drawdown. Analisi tecnica con SMA, EMA, RSI, MACD.</p>
+      <p class="feature-desc">Grafici SVG nativi: andamento ad area e ripartizione a ciambella con legenda. Intervalli 24h, 7g, 30g e 90g, indice di diversificazione, migliore e peggiore performer.</p>
     </div>
     <div class="feature-card" onclick="openModal('trading')">
       <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🔄</div>
       <h3 class="feature-title">Swap & Trading</h3>
-      <p class="feature-desc">Integrazione con Uniswap, PancakeSwap e Curve. Ordini limite, copy trading, yield farming su 8 pool.</p>
+      <p class="feature-desc">Quotazioni calcolate in tempo reale con prezzo per token, price impact su curva constant-product, commissioni per rete e slippage configurabile. Validazione di saldo e gas prima di ogni conferma.</p>
     </div>
     <div class="feature-card" onclick="openModal('multichain')">
       <div class="feature-card-arrow">↗</div>
@@ -751,14 +753,26 @@
     <div class="feature-card" onclick="openModal('social')">
       <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🤝</div>
-      <h3 class="feature-title">Social & Referral</h3>
-      <p class="feature-desc">Condivisione portfolio su Twitter, Telegram, WhatsApp. Programma referral con 4 tier (Bronze → Platinum).</p>
+      <h3 class="feature-title">Social Trading & Referral</h3>
+      <p class="feature-desc">Scopri i trader migliori con ricerca e ordinamento per ROI, win rate, follower e numero di trade. Copia automatica con quota dall'1% al 100% e gestione completa delle posizioni copiate.</p>
     </div>
     <div class="feature-card" onclick="openModal('security')">
       <div class="feature-card-arrow">↗</div>
       <div class="feature-icon">🛡️</div>
       <h3 class="feature-title">Sicurezza Avanzata</h3>
       <p class="feature-desc">2FA con SMS, Email e Authenticator. Crittografia end-to-end. Gestione sessioni sicura.</p>
+    </div>
+    <div class="feature-card" onclick="openModal('kyc')">
+      <div class="feature-card-arrow">↗</div>
+      <div class="feature-icon">🪪</div>
+      <h3 class="feature-title">Verifica Identità (KYC)</h3>
+      <p class="feature-desc">Percorso di verifica su più livelli con form anagrafico validato, requisiti differenziati, stato di ogni documento e avanzamento ponderato in tempo reale.</p>
+    </div>
+    <div class="feature-card" onclick="openModal('i18n')">
+      <div class="feature-card-arrow">↗</div>
+      <div class="feature-icon">🌍</div>
+      <h3 class="feature-title">Interfaccia in 8 Lingue</h3>
+      <p class="feature-desc">Motore di localizzazione riscritto con 274 chiavi tradotte in italiano, inglese, spagnolo, francese, tedesco, portoghese, cinese e giapponese.</p>
     </div>
   </div>
 </section>
@@ -927,10 +941,12 @@
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Obiettivo risparmio mensile</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Riepilogo fiscale annuale + export PDF</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Portfolio multi-chain (5 blockchain)</li>
-        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Swap & trading con aggregatori DEX</li>
-        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Social trading + copy trading + leaderboard</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Swap & trading con quotazioni reali e price impact</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Social trading con copia automatica e leaderboard</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Verifica identità KYC multilivello con stato documenti</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Grafici di portafoglio SVG nativi (area + ciambella)</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Agenti AI con policy di spesa configurabili</li>
-        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Supporto 8 lingue (EN, IT, ES, FR, DE, PT, ZH, JA)</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span style="color:#22c55e;">✓</span> Supporto 8 lingue con 274 chiavi allineate (EN, IT, ES, FR, DE, PT, ZH, JA)</li>
       </ul>
     </div>
 
@@ -957,7 +973,7 @@
       </div>
       <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> App Store & Google Play release</li>
-        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> KYC/AML compliance integrata</li>
+        <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> Verifica documentale automatica AML con provider certificato</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> Carta di debito virtuale AgentPay</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> Yield automatico su saldo fermo</li>
         <li style="font-size: 0.875rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;"><span>○</span> API pubblica per sviluppatori terzi</li>
@@ -1059,6 +1075,28 @@
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+      <article style="background: var(--surface); border-radius: 16px; overflow: hidden; border: 1px solid #22c55e55; display: flex; flex-direction: column;">
+        <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+          <span style="font-size: 2.5rem;">&#x1f504;</span>
+          <div>
+            <span style="background: rgba(255,255,255,0.2); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px;">Rilascio</span>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.8rem; margin: 4px 0 0;">16 Agosto 2026</p>
+          </div>
+        </div>
+        <div style="padding: 1.25rem; flex: 1;">
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem;">Trading, social e portafoglio: la v135 alza l'asta</h3>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;">
+            Gli swap ora partono da <strong>quotazioni reali</strong> con price impact e commissioni per rete, il social trading permette di copiare i migliori trader con una quota configurabile, il KYC guida l'utente livello per livello e il portafoglio mostra <strong>grafici SVG nativi</strong>. In più: i18n riscritto su 274 chiavi e <strong>781 test</strong> superati senza errori.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="background: #22c55e15; color: #16a34a; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #22c55e30;">#trading</span>
+            <span style="background: #22c55e15; color: #16a34a; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #22c55e30;">#social</span>
+            <span style="background: #22c55e15; color: #16a34a; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #22c55e30;">#kyc</span>
+            <span style="background: #22c55e15; color: #16a34a; font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #22c55e30;">#portfolio</span>
+          </div>
+        </div>
+      </article>
 
       <article style="background: var(--surface); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column;">
         <div style="background: linear-gradient(135deg, #0a7ea4 0%, #0d9bc8 100%); padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
@@ -1744,6 +1782,22 @@ async function handleContactSubmit(e) {
   </div>
 
     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <div class="changelog-entry" style="border-left: 3px solid #22c55e;">
+      <div class="changelog-version">v135 <span style="background: rgba(34,197,94,0.15); color: #22c55e; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; vertical-align: middle; margin-left: 6px;">ULTIMA</span></div>
+      <div class="changelog-date">16 Agosto 2026</div>
+      <div class="changelog-desc">
+        <strong>Rilascio dedicato a trading, social trading, KYC e portafoglio.</strong>
+        <ul class="changelog-list" style="margin-top: 0.75rem;">
+          <li><strong>Trading</strong> &mdash; Nuovo servizio di quotazione reale: prezzo per token, price impact su curva constant-product, commissioni per rete, slippage con importo minimo e massimo ricevuto, validazione di saldo e gas, selezione e inversione della coppia, importi rapidi e avvisi di rischio automatici.</li>
+          <li><strong>Social Trading</strong> &mdash; Ricerca trader con ordinamento per ROI, win rate, follower e numero di trade; schede Discover, Following e Copy Trading; copia automatica con quota validata dall'1% al 100%; conferma esplicita di unfollow; copia dell'ultimo trade; chiusura delle posizioni copiate; riepilogo aggregato e navigazione al profilo del trader.</li>
+          <li><strong>KYC</strong> &mdash; Form anagrafico con validazione completa, requisiti differenziati per livello, stato di ogni documento, avanzamento ponderato, nota privacy, errori localizzati e nuovo stato &ldquo;in revisione&rdquo;.</li>
+          <li><strong>Portafoglio</strong> &mdash; Grafici SVG reali (area chart per l'andamento e donut chart con legenda per la composizione), intervalli 24h/7g/30g/90g, metriche di diversificazione, individuazione di migliore e peggiore performer, ordinamento asset ed empty state guidato.</li>
+          <li><strong>Localizzazione</strong> &mdash; Sistema i18n riscritto completamente: 274 chiavi allineate su 8 lingue (IT, EN, ES, FR, DE, PT, ZH, JA).</li>
+          <li><strong>Backup wallet</strong> &mdash; Schermata di export con messaggio comprensibile sui rischi e nuovo pulsante &ldquo;Importa backup&rdquo;.</li>
+          <li><strong>Qualità del codice</strong> &mdash; 54 errori TypeScript corretti (build a 0 errori) e suite di test da 741 a <strong>781 test passati, 0 falliti</strong>.</li>
+        </ul>
+      </div>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v139</div>
       <div class="changelog-date">17 Luglio 2026</div>
@@ -2456,7 +2510,7 @@ async function handleContactSubmit(e) {
     <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
       <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">📄</div>
       <h3 style="color: var(--text-primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">Descrizione estesa</h3>
-      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; font-style: italic;">&ldquo;La piattaforma FSL + AgentPay combina la gestione finanziaria avanzata con l'intelligenza artificiale. Supporta conti bancari multipli, bonifici, analisi spese, report fiscali, budget planner con regola 50/30/20, calendario finanziario e notifiche intelligenti. Disponibile su iOS e Android tramite Expo.&rdquo;</p>
+      <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; font-style: italic;">&ldquo;La piattaforma FSL + AgentPay combina la gestione finanziaria avanzata con l'intelligenza artificiale. Supporta conti bancari multipli, bonifici, analisi spese, report fiscali, budget planner con regola 50/30/20, calendario finanziario e notifiche intelligenti. Il comparto crypto offre swap con quotazioni reali e price impact calcolato, social trading con copia automatica configurabile, verifica dell'identità KYC multilivello e analisi di portafoglio con grafici nativi. Interfaccia disponibile in 8 lingue, su iOS e Android tramite Expo.&rdquo;</p>
     </div>
 
     <!-- Statistiche chiave -->
@@ -2468,6 +2522,8 @@ async function handleContactSubmit(e) {
         <li style="color: var(--text-muted); font-size: 0.9rem;">🧩 <strong style="color: var(--text-primary);">50+ widget</strong> — Dashboard personalizzabile</li>
         <li style="color: var(--text-muted); font-size: 0.9rem;">🔒 <strong style="color: var(--text-primary);">Self-custodial</strong> — Nessun dato su server terzi</li>
         <li style="color: var(--text-muted); font-size: 0.9rem;">🤖 <strong style="color: var(--text-primary);">AI-powered</strong> — Agenti per pagamenti automatici</li>
+        <li style="color: var(--text-muted); font-size: 0.9rem;">✅ <strong style="color: var(--text-primary);">781 test</strong> — Suite automatica, 0 errori TypeScript</li>
+        <li style="color: var(--text-muted); font-size: 0.9rem;">🌍 <strong style="color: var(--text-primary);">8 lingue</strong> — 274 chiavi di traduzione allineate</li>
         <li style="color: var(--text-muted); font-size: 0.9rem;">🆓 <strong style="color: var(--text-primary);">Open source</strong> — MIT License su GitHub</li>
       </ul>
     </div>
@@ -2811,7 +2867,8 @@ const MODALS = {
       'Backup cifrato con frase mnemonica BIP-39 a 24 parole',
       'Firma offline delle transazioni per massima sicurezza',
       'Compatibile con hardware wallet Ledger e Trezor',
-      'Import/export wallet tramite JSON cifrato'
+      'Export del wallet con avviso chiaro sui rischi e istruzioni passo-passo',
+      'Importazione del backup direttamente dalla schermata di export'
     ],
     cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
   },
@@ -2832,28 +2889,33 @@ const MODALS = {
   analytics: {
     icon: '📊',
     title: 'Portfolio Analytics',
-    subtitle: 'Analisi professionale del tuo portfolio con metriche avanzate usate dai trader istituzionali. Grafici interattivi, indicatori tecnici e report esportabili.',
+    subtitle: 'Il tuo patrimonio raccontato da grafici veri, non da segnaposto. Andamento nel tempo, composizione per asset e metriche di rischio calcolate direttamente sul dispositivo.',
     features: [
-      'ROI, Sharpe Ratio, Sortino Ratio e Max Drawdown in tempo reale',
-      'Indicatori tecnici: SMA, EMA, RSI, MACD, Bollinger Bands',
-      'Grafici candlestick con timeframe da 1 minuto a 1 anno',
-      'Analisi allocazione portfolio per asset e blockchain',
-      'Report PDF mensile e annuale con riepilogo fiscale',
-      'Confronto performance vs benchmark (BTC, ETH, S&P500)'
+      'Grafico ad area SVG nativo con andamento del valore di portafoglio',
+      'Grafico a ciambella con legenda e peso percentuale di ogni asset',
+      'Intervalli temporali selezionabili: 24 ore, 7, 30 e 90 giorni',
+      'Metriche di diversificazione e concentrazione del portafoglio',
+      'Individuazione automatica di migliore e peggiore performer',
+      'Ordinamento degli asset per valore, variazione e allocazione',
+      'Empty state guidato quando il portafoglio è ancora vuoto',
+      'ROI, Sharpe Ratio e Max Drawdown con report PDF esportabile'
     ],
     cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📊 Scopri Analytics', href: '#app', primary: false }]
   },
   trading: {
     icon: '🔄',
     title: 'Swap & Trading',
-    subtitle: 'Accedi ai migliori DEX aggregati in un’unica interfaccia. Esegui swap, piazza ordini limite e partecipa al yield farming con le migliori condizioni di mercato.',
+    subtitle: 'Ogni scambio parte da una quotazione reale, non da una stima. Prima di confermare vedi prezzo, impatto sul mercato, commissioni di rete e importo minimo garantito.',
     features: [
-      'Aggregatore DEX: Uniswap, PancakeSwap, Curve, SushiSwap',
-      'Ordini limite e stop-loss su tutti i token supportati',
-      'Copy trading: replica automaticamente i portafogli top trader',
-      'Yield farming su 8 pool con APY aggiornato in tempo reale',
-      'Slippage configurabile e protezione MEV integrata',
-      'Storico completo di tutti gli swap con P&L per operazione'
+      'Motore di quotazione con prezzo per token calcolato in tempo reale',
+      'Price impact stimato su curva constant-product (modello AMM)',
+      'Commissioni differenziate per rete con costo gas indicato in anticipo',
+      'Slippage configurabile con importo minimo e massimo ricevuto',
+      'Validazione di saldo disponibile e gas prima di ogni conferma',
+      'Selezione e inversione istantanea della coppia di token',
+      'Importi rapidi (25%, 50%, 75%, MAX) per operare in un tap',
+      'Avvisi di rischio automatici su impatto elevato e liquidità ridotta',
+      'Storico completo degli swap con P&L per singola operazione'
     ],
     cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
   },
@@ -2901,15 +2963,18 @@ const MODALS = {
   },
   social: {
     icon: '🤝',
-    title: 'Social & Referral',
-    subtitle: 'Condividi i tuoi successi e guadagna con il programma referral a 4 livelli. Costruisci la tua rete e scala verso il tier Platinum.',
+    title: 'Social Trading & Referral',
+    subtitle: 'Impara dai trader che ottengono risultati e replica le loro strategie con il controllo che meriti. Ogni numero è verificabile, ogni copia è reversibile.',
     features: [
-      'Condivisione portfolio su Twitter, Telegram e WhatsApp con un tap',
-      'Programma referral a 4 tier: Bronze, Silver, Gold, Platinum',
-      'Commissioni crescenti: 1% → 2.5% sulle fee dei referral',
-      'Leaderboard globale con classifica top trader del mese',
-      'Badge e achievement per milestone raggiunte',
-      'Link referral personalizzato con tracking conversioni'
+      'Tre schede dedicate: Discover, Following e Copy Trading',
+      'Ricerca trader e ordinamento per ROI, win rate, follower e trade',
+      'Copia automatica con quota impostabile dall’1% al 100% del capitale',
+      'Copia manuale dell’ultimo trade eseguito dal trader seguito',
+      'Chiusura delle posizioni copiate in qualsiasi momento',
+      'Conferma esplicita richiesta prima di interrompere il follow',
+      'Riepilogo aggregato di performance e posizioni copiate attive',
+      'Navigazione diretta al profilo completo di ogni trader',
+      'Programma referral a 4 tier: Bronze, Silver, Gold, Platinum'
     ],
     cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
   },
@@ -2926,6 +2991,36 @@ const MODALS = {
       'Audit log completo di tutte le operazioni con timestamp'
     ],
     cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '🌐 FSL Ditta', href: 'https://fslditta.com', primary: false }]
+  },
+  kyc: {
+    icon: '🪪',
+    title: 'Verifica Identità (KYC)',
+    subtitle: 'Un percorso di verifica chiaro, progressivo e trasparente. Sai sempre quale documento manca, a che punto sei e perché ogni dato viene richiesto.',
+    features: [
+      'Form anagrafico con validazione in tempo reale di ogni campo',
+      'Requisiti differenziati per livello di verifica richiesto',
+      'Stato individuale di ogni documento: mancante, caricato, approvato',
+      'Stato dedicato “in revisione” durante la valutazione manuale',
+      'Indicatore di avanzamento ponderato sui requisiti effettivi',
+      'Messaggi di errore localizzati e comprensibili in tutte le lingue',
+      'Nota privacy sul trattamento dei dati prima dell’invio',
+      'Ripresa del percorso dal punto in cui era stato interrotto'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '🔒 Privacy Policy', href: '/privacy.html', primary: false }]
+  },
+  i18n: {
+    icon: '🌍',
+    title: 'Interfaccia in 8 Lingue',
+    subtitle: 'Il motore di localizzazione è stato riscritto da zero: nessuna chiave mancante, nessun testo non tradotto, nessun fallback improvvisato in nessuna schermata.',
+    features: [
+      '274 chiavi di traduzione mantenute allineate su tutte le lingue',
+      'Italiano, inglese, spagnolo, francese, tedesco, portoghese, cinese, giapponese',
+      'Cambio lingua immediato senza riavvio dell’applicazione',
+      'Messaggi di errore e di validazione completamente localizzati',
+      'Rilevamento automatico della lingua di sistema al primo avvio',
+      'Copertura verificata da test automatici su ogni chiave'
+    ],
+    cta: [{ label: '📦 Vedi su GitHub', href: 'https://github.com/fslmultiservice22/agentpay-mobile-app', primary: true }, { label: '📱 Scarica App', href: '#download', primary: false }]
   }
 };
 
