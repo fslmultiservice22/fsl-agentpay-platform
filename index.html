@@ -1346,6 +1346,7 @@
       <input type="hidden" name="_subject" value="Nuova iscrizione newsletter AgentPay" />
       <input type="hidden" name="_next" value="https://agentpay.fslditta.com/#newsletter" />
       <button
+        id="newsletter-submit"
         type="submit"
         style="background: var(--accent); color: #fff; border: none; border-radius: 12px; padding: 1rem 2rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s;"
         onmouseover="this.style.opacity='0.85'"
@@ -1357,6 +1358,9 @@
     <div id="newsletter-success" style="display:none; margin-top: 1.5rem; padding: 1rem 1.5rem; background: #22c55e22; border: 1px solid #22c55e55; border-radius: 12px; color: #22c55e; font-weight: 600;">
       ✅ Iscrizione completata! Ti contatteremo presto.
     </div>
+    <div id="newsletter-error" role="alert" aria-live="assertive" style="display:none; margin-top: 1.5rem; padding: 1rem 1.5rem; background: #ef444422; border: 1px solid #ef444455; border-radius: 12px; color: #fca5a5; font-weight: 600;">
+      Non è stato possibile completare l’iscrizione. Riprova più tardi.
+    </div>
     <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted);">
       Puoi disiscriverti in qualsiasi momento. I tuoi dati non vengono condivisi con terze parti.
     </p>
@@ -1366,9 +1370,14 @@
 (function() {
   var form = document.getElementById('newsletter-form');
   var success = document.getElementById('newsletter-success');
+  var error = document.getElementById('newsletter-error');
+  var submit = document.getElementById('newsletter-submit');
   if (!form) return;
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    if (success) success.style.display = 'none';
+    if (error) error.style.display = 'none';
+    if (submit) { submit.disabled = true; submit.textContent = 'Invio in corso…'; }
     var data = new FormData(form);
     fetch(form.action, {
       method: 'POST',
@@ -1378,8 +1387,14 @@
       if (r.ok) {
         form.style.display = 'none';
         if (success) success.style.display = 'block';
+      } else {
+        throw new Error('newsletter submission failed');
       }
-    }).catch(function() {});
+    }).catch(function() {
+      if (error) error.style.display = 'block';
+    }).finally(function() {
+      if (submit) { submit.disabled = false; submit.textContent = '📬 Iscriviti alla newsletter'; }
+    });
   });
 })();
 </script>
@@ -1423,20 +1438,20 @@
   <!-- Form contatto -->
   <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 2.5rem; max-width: 600px; margin: 0 auto; text-align: left;">
     <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary);">Invia un messaggio</h3>
-    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+    <form id="contactForm" action="https://formspree.io/f/xpwzgqvj" method="POST" onsubmit="handleContactSubmit(event)">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
         <div>
           <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Nome</label>
-          <input type="text" id="cf-name" required placeholder="Mario Rossi" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
+          <input type="text" id="cf-name" name="name" required placeholder="Mario Rossi" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
         </div>
         <div>
           <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Email</label>
-          <input type="email" id="cf-email" required placeholder="mario@azienda.com" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
+          <input type="email" id="cf-email" name="email" required placeholder="mario@azienda.com" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box;">
         </div>
       </div>
       <div style="margin-bottom: 1rem;">
         <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Tipo di interesse</label>
-        <select id="cf-type" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none;">
+        <select id="cf-type" name="interest_type" style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none;">
           <option value="demo">Richiesta Demo</option>
           <option value="investor">Investitore</option>
           <option value="partner">Partner Bancario</option>
@@ -1446,26 +1461,43 @@
       </div>
       <div style="margin-bottom: 1.5rem;">
         <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Messaggio</label>
-        <textarea id="cf-message" required rows="4" placeholder="Descrivi brevemente il tuo interesse o la tua domanda..." style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
+        <textarea id="cf-message" name="message" required rows="4" placeholder="Descrivi brevemente il tuo interesse o la tua domanda..." style="width: 100%; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-primary); font-size: 0.9rem; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
       </div>
-      <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Invia Messaggio ✉️</button>
-      <div id="cf-success" style="display: none; margin-top: 1rem; padding: 12px; background: rgba(34,197,94,0.1); border: 1px solid #22C55E; border-radius: 10px; color: #22C55E; font-size: 0.9rem; text-align: center;">✅ Messaggio inviato! Ti risponderemo entro 24h.</div>
+      <button id="cf-submit" type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Invia Messaggio ✉️</button>
+      <div id="cf-success" role="status" aria-live="polite" style="display: none; margin-top: 1rem; padding: 12px; background: rgba(34,197,94,0.1); border: 1px solid #22C55E; border-radius: 10px; color: #22C55E; font-size: 0.9rem; text-align: center;">✅ Messaggio inviato correttamente. Ti risponderemo entro 24 ore.</div>
+      <div id="cf-error" role="alert" aria-live="assertive" style="display: none; margin-top: 1rem; padding: 12px; background: rgba(239,68,68,0.1); border: 1px solid #EF4444; border-radius: 10px; color: #FCA5A5; font-size: 0.9rem; text-align: center;">Non è stato possibile inviare il messaggio. Riprova oppure scrivi a <a href="mailto:info@fslditta.com" style="color: #FCA5A5; text-decoration: underline;">info@fslditta.com</a>.</div>
     </form>
   </div>
 </section>
 
 <script>
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('cf-name').value;
-  const email = document.getElementById('cf-email').value;
-  const type = document.getElementById('cf-type').value;
-  const message = document.getElementById('cf-message').value;
-  const subject = encodeURIComponent('[AgentPay Demo] ' + type + ' - ' + name);
-  const body = encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\nTipo: ' + type + '\n\nMessaggio:\n' + message);
-  window.location.href = 'mailto:info@fslditta.com?subject=' + subject + '&body=' + body;
-  document.getElementById('cf-success').style.display = 'block';
-  document.getElementById('contactForm').reset();
+  const form = e.currentTarget;
+  const submit = document.getElementById('cf-submit');
+  const success = document.getElementById('cf-success');
+  const error = document.getElementById('cf-error');
+  success.style.display = 'none';
+  error.style.display = 'none';
+  submit.disabled = true;
+  submit.textContent = 'Invio in corso…';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+    if (!response.ok) throw new Error('contact submission failed');
+    success.style.display = 'block';
+    form.reset();
+  } catch (submissionError) {
+    console.error('Contact form submission failed:', submissionError);
+    error.style.display = 'block';
+  } finally {
+    submit.disabled = false;
+    submit.textContent = 'Invia Messaggio ✉️';
+  }
 }
 </script>
 
@@ -1986,7 +2018,7 @@ function handleContactSubmit(e) {
           <li>Sito di presentazione deployato su Cloudflare Pages: <a href="https://fsl-agentpay-platform.pages.dev" target="_blank" style="color:var(--accent)">fsl-agentpay-platform.pages.dev</a></li>
           <li>URL pubblico permanente con CDN globale Cloudflare (15+ edge locations)</li>
           <li>Progetto Pages creato con wrangler CLI v4 e token API dedicato</li>
-          <li>App AgentPay Wallet disponibile su <a href="https://agentpayapp-afxebgd9.manus.space" target="_blank" style="color:var(--accent)">agentpayapp-afxebgd9.manus.space</a></li>
+          <li>L'anteprima temporanea dell'app non è un canale di distribuzione. Per provare il progetto usa il <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" rel="noopener" style="color:var(--accent)">repository AgentPay Wallet</a> con Expo Go o una build APK verificata.</li>
         </ul>
       </div>
     </div>
@@ -2524,24 +2556,24 @@ function handleContactSubmit(e) {
       <div class="section-label">Dati in tempo reale</div>
       <h2 class="section-title">Statistiche Live</h2>
       <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 1rem auto; line-height: 1.7;">
-        Metriche aggiornate in tempo reale dal repository GitHub e dal progetto AgentPay.
+        Metriche verificate dal repository GitHub e dall’ultimo audit tecnico del progetto AgentPay.
       </p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">112</div>
+        <div id="stat-sessions" style="font-size: 2.2rem; font-weight: 900; color: var(--accent); line-height: 1;">148</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Sessioni di sviluppo</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
-        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">106</div>
+        <div id="stat-screens" style="font-size: 2.2rem; font-weight: 900; color: #22c55e; line-height: 1;">139</div>
         <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Schermate app</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
-        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧩</div>
-        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">54</div>
-        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Widget Home</div>
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🧪</div>
+        <div id="stat-widgets" style="font-size: 2.2rem; font-weight: 900; color: #f59e0b; line-height: 1;">977</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Test automatizzati</div>
       </div>
       <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-align: center;">
         <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💾</div>
@@ -2599,13 +2631,12 @@ function handleContactSubmit(e) {
     })
     .catch(function() {});
   // Anima i contatori statici
-  var now = new Date();
   document.getElementById('stat-updated').textContent =
-    'Ultimo aggiornamento: ' + now.toLocaleDateString('it-IT') + ' ' + now.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+    'Metriche verificate nell’audit del 16 agosto 2026 — sessione v148';
   setTimeout(function() {
-    animateCounter(document.getElementById('stat-sessions'), 112, 800);
-    animateCounter(document.getElementById('stat-screens'), 106, 900);
-    animateCounter(document.getElementById('stat-widgets'), 54, 700);
+    animateCounter(document.getElementById('stat-sessions'), 148, 800);
+    animateCounter(document.getElementById('stat-screens'), 139, 900);
+    animateCounter(document.getElementById('stat-widgets'), 977, 700);
     animateCounter(document.getElementById('stat-sections'), 21, 600);
   }, 300);
 })();

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Termini di Servizio di AgentPay Wallet — FSL Multiservice. Condizioni d'uso dell'applicazione mobile e del sito web." />
+  <title>Termini di Servizio — AgentPay Wallet | FSL Multiservice</title>
+  <meta name="theme-color" content="#1a56db" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1e429f;
+      --secondary: #0e9f6e;
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,23,42,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-size: 1.25rem; font-weight: 800; color: var(--text); }
+    .nav-logo-text span { color: #60a5fa; }
+    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #162032 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 2rem 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(14,159,110,0.15); border: 1px solid rgba(14,159,110,0.3);
+      color: #34d399; padding: 6px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero p { font-size: 1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+    .hero-meta { margin-top: 1.5rem; font-size: 13px; color: var(--text-muted); }
+
+    .container { max-width: 820px; margin: 0 auto; padding: 60px 2rem 80px; }
+
+    .toc {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
+    }
+    .toc h2 { font-size: 14px; font-weight: 700; color: #34d399; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .toc li a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .toc li a:hover { color: var(--text); }
+
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text);
+      margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      background: rgba(14,159,110,0.2); color: #34d399;
+      font-size: 13px; font-weight: 700; flex-shrink: 0;
+    }
+    .section p { font-size: 15px; color: var(--text-muted); margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .section ul li { font-size: 15px; color: var(--text-muted); }
+    .section ul li strong { color: var(--text); }
+
+    .highlight-box {
+      background: rgba(14,159,110,0.08); border: 1px solid rgba(14,159,110,0.25);
+      border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+    }
+    .highlight-box p { margin: 0; font-size: 14px; color: #6ee7b7; }
+
+    .warning-box {
+      background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+    }
+    .warning-box p { margin: 0; font-size: 14px; color: #fca5a5; }
+
+    .info-box {
+      background: rgba(26,86,219,0.08); border: 1px solid rgba(26,86,219,0.25);
+      border-radius: 10px; padding: 16px 20px; margin: 16px 0;
+    }
+    .info-box p { margin: 0; font-size: 14px; color: #93c5fd; }
+
+    .contact-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 28px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .contact-card a { color: #60a5fa; text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      background: #080f1e; border-top: 1px solid #1e293b;
+      padding: 40px 2rem 28px; text-align: center;
+    }
+    footer p { font-size: 13px; color: #64748b; }
+    footer a { color: #94a3b8; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 640px) {
+      .container { padding: 40px 1.25rem 60px; }
+      .hero { padding: 48px 1.25rem 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/logo-icon.png" alt="AgentPay" width="32" height="32" style="border-radius:8px;" onerror="this.style.display='none'" />
+    <span class="nav-logo-text">FSL <span>+</span> AgentPay</span>
+  </a>
+  <a href="/" class="nav-back">← Torna alla home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">📋 Condizioni d'uso</div>
+  <h1>Termini di Servizio</h1>
+  <p>Condizioni generali di utilizzo dell'applicazione AgentPay Wallet e del sito web app.fslditta.com, gestiti da FSL Multiservice.</p>
+  <p class="hero-meta">Ultimo aggiornamento: 28 maggio 2026 · Versione 1.0</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h2>Indice</h2>
+    <ol>
+      <li><a href="#accettazione">Accettazione dei termini</a></li>
+      <li><a href="#servizio">Descrizione del servizio</a></li>
+      <li><a href="#account">Utilizzo dell'applicazione</a></li>
+      <li><a href="#responsabilita">Limitazione di responsabilità</a></li>
+      <li><a href="#crypto">Avvertenze sulle criptovalute</a></li>
+      <li><a href="#proprieta">Proprietà intellettuale</a></li>
+      <li><a href="#condotta">Condotta dell'utente</a></li>
+      <li><a href="#terzi">Servizi di terze parti</a></li>
+      <li><a href="#modifiche">Modifiche al servizio e ai termini</a></li>
+      <li><a href="#risoluzione">Risoluzione del contratto</a></li>
+      <li><a href="#legge">Legge applicabile e foro competente</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Accettazione -->
+  <div class="section" id="accettazione">
+    <h2><span class="num">1</span> Accettazione dei termini</h2>
+    <p>Utilizzando l'applicazione mobile AgentPay Wallet ("l'App") o il sito web <a href="https://app.fslditta.com" style="color:#60a5fa;">app.fslditta.com</a> ("il Sito"), l'utente accetta integralmente i presenti Termini di Servizio ("Termini"). Se non si accettano questi Termini, è necessario cessare immediatamente l'utilizzo dell'App e del Sito.</p>
+    <p>I presenti Termini costituiscono un accordo legalmente vincolante tra l'utente e <strong style="color:var(--text);">FSL Multiservice</strong> ("FSL", "noi", "ci"). FSL si riserva il diritto di aggiornare i presenti Termini in qualsiasi momento; le modifiche sostanziali saranno comunicate con almeno 30 giorni di preavviso.</p>
+    <div class="highlight-box">
+      <p>✅ Utilizzando l'App dopo la pubblicazione di nuovi Termini, l'utente accetta automaticamente le versioni aggiornate.</p>
+    </div>
+  </div>
+
+  <!-- 2. Servizio -->
+  <div class="section" id="servizio">
+    <h2><span class="num">2</span> Descrizione del servizio</h2>
+    <p>AgentPay Wallet è un'applicazione mobile <strong style="color:var(--text);">self-custodial</strong> per la gestione personale delle finanze, che include le seguenti funzionalità principali:</p>
+    <ul>
+      <li>Gestione locale di conti bancari e bonifici SEPA (dati conservati esclusivamente sul dispositivo dell'utente).</li>
+      <li>Monitoraggio e analisi delle spese per categoria con budget mensili personalizzabili.</li>
+      <li>Gestione di pagamenti ricorrenti con promemoria e calendario scadenze.</li>
+      <li>Portafoglio multi-chain per criptovalute (Ethereum, Polygon, BSC, Arbitrum, Optimism, Solana) in modalità sola lettura dei saldi pubblici.</li>
+      <li>Notifiche push locali per scadenze e avvisi di budget.</li>
+      <li>Obiettivi di risparmio con tracciamento dei progressi.</li>
+    </ul>
+    <div class="info-box">
+      <p>ℹ️ AgentPay Wallet è uno strumento di <strong>gestione personale</strong>. Non è un istituto di pagamento, una banca, un broker finanziario né un servizio di custodia di criptovalute. Non eseguiamo transazioni finanziarie reali per conto dell'utente.</p>
+    </div>
+  </div>
+
+  <!-- 3. Account -->
+  <div class="section" id="account">
+    <h2><span class="num">3</span> Utilizzo dell'applicazione</h2>
+    <p>L'App non richiede la creazione di un account o la registrazione. Tutti i dati inseriti dall'utente vengono conservati localmente sul dispositivo. L'utente è l'unico responsabile della sicurezza del proprio dispositivo e dei dati in esso contenuti.</p>
+    <p>L'utente si impegna a:</p>
+    <ul>
+      <li>Utilizzare l'App esclusivamente per finalità personali e lecite.</li>
+      <li>Non tentare di accedere, modificare o interferire con i sistemi informatici di FSL o di terze parti.</li>
+      <li>Non utilizzare l'App per attività fraudolente, di riciclaggio di denaro o comunque illecite.</li>
+      <li>Mantenere aggiornata l'App all'ultima versione disponibile per beneficiare delle patch di sicurezza.</li>
+    </ul>
+    <p>L'utilizzo dell'App è consentito a persone di età pari o superiore a <strong style="color:var(--text);">18 anni</strong>. FSL si riserva il diritto di sospendere l'accesso in caso di violazione dei presenti Termini.</p>
+  </div>
+
+  <!-- 4. Responsabilità -->
+  <div class="section" id="responsabilita">
+    <h2><span class="num">4</span> Limitazione di responsabilità</h2>
+    <p>L'App è fornita <strong style="color:var(--text);">"così com'è"</strong> (as-is) e <strong style="color:var(--text);">"come disponibile"</strong> (as-available), senza garanzie di alcun tipo, esplicite o implicite, incluse, a titolo esemplificativo, garanzie di commerciabilità, idoneità per uno scopo particolare o non violazione.</p>
+    <p>Nella misura massima consentita dalla legge applicabile, FSL non sarà responsabile per:</p>
+    <ul>
+      <li>Perdita, corruzione o cancellazione dei dati conservati localmente sul dispositivo dell'utente.</li>
+      <li>Decisioni finanziarie prese dall'utente sulla base delle informazioni visualizzate nell'App.</li>
+      <li>Interruzioni del servizio dovute a manutenzione, guasti tecnici o cause di forza maggiore.</li>
+      <li>Danni indiretti, incidentali, speciali, consequenziali o punitivi di qualsiasi natura.</li>
+      <li>Perdite derivanti dall'utilizzo o dall'impossibilità di utilizzo dell'App.</li>
+    </ul>
+    <div class="warning-box">
+      <p>⚠️ <strong>Responsabilità dell'utente:</strong> L'utente è l'unico responsabile del backup dei propri dati. FSL non è in grado di recuperare dati persi a seguito di disinstallazione dell'App, reset del dispositivo o altri eventi che comportino la cancellazione del local storage.</p>
+    </div>
+  </div>
+
+  <!-- 5. Crypto -->
+  <div class="section" id="crypto">
+    <h2><span class="num">5</span> Avvertenze sulle criptovalute</h2>
+    <p>Le funzionalità relative alle criptovalute presenti nell'App sono fornite a scopo puramente <strong style="color:var(--text);">informativo e di monitoraggio</strong>. FSL non fornisce consulenza finanziaria, di investimento, legale o fiscale in relazione alle criptovalute o a qualsiasi altro asset digitale.</p>
+    <ul>
+      <li>I mercati delle criptovalute sono altamente volatili. Il valore degli asset digitali può aumentare o diminuire drasticamente in breve tempo.</li>
+      <li>FSL non è responsabile per perdite derivanti da operazioni su criptovalute effettuate dall'utente.</li>
+      <li>L'App non custodisce chiavi private né esegue transazioni blockchain per conto dell'utente.</li>
+      <li>I saldi visualizzati nell'App sono ottenuti da nodi RPC pubblici e potrebbero non essere aggiornati in tempo reale.</li>
+    </ul>
+    <div class="warning-box">
+      <p>⚠️ <strong>Non investire mai</strong> più di quanto si è disposti a perdere. Le performance passate non garantiscono risultati futuri.</p>
+    </div>
+  </div>
+
+  <!-- 6. Proprietà intellettuale -->
+  <div class="section" id="proprieta">
+    <h2><span class="num">6</span> Proprietà intellettuale</h2>
+    <p>Tutti i contenuti dell'App e del Sito — inclusi, a titolo esemplificativo, il codice sorgente, il design, i loghi, i testi, le icone e la grafica — sono di proprietà esclusiva di <strong style="color:var(--text);">FSL Multiservice</strong> o dei rispettivi titolari dei diritti, e sono protetti dalle leggi sul diritto d'autore, sui marchi e da altre normative sulla proprietà intellettuale applicabili.</p>
+    <p>È concessa all'utente una licenza limitata, non esclusiva, non trasferibile e revocabile per utilizzare l'App esclusivamente per uso personale, in conformità con i presenti Termini. È vietato:</p>
+    <ul>
+      <li>Copiare, modificare, distribuire, vendere o concedere in licenza l'App o qualsiasi sua parte.</li>
+      <li>Decompilare, disassemblare o tentare di estrarre il codice sorgente dell'App.</li>
+      <li>Rimuovere o alterare avvisi di copyright, marchi o altri avvisi di proprietà.</li>
+      <li>Utilizzare il nome, il logo o i marchi di FSL senza previo consenso scritto.</li>
+    </ul>
+    <p>Il codice sorgente dell'App è disponibile su <a href="https://github.com/fslmultiservice22/agentpay-mobile-app" target="_blank" rel="noopener" style="color:#60a5fa;">GitHub</a> sotto licenza open-source. I termini della licenza open-source si applicano esclusivamente al codice sorgente e non ai marchi, al design o ad altri elementi non-codice.</p>
+  </div>
+
+  <!-- 7. Condotta -->
+  <div class="section" id="condotta">
+    <h2><span class="num">7</span> Condotta dell'utente</h2>
+    <p>L'utente si impegna a non utilizzare l'App o il Sito per:</p>
+    <ul>
+      <li>Attività illegali o fraudolente, incluso il riciclaggio di denaro o il finanziamento del terrorismo.</li>
+      <li>Violazione dei diritti di terzi, inclusi diritti di proprietà intellettuale, privacy o riservatezza.</li>
+      <li>Trasmissione di virus, malware o qualsiasi altro codice dannoso.</li>
+      <li>Raccolta non autorizzata di dati personali di altri utenti.</li>
+      <li>Qualsiasi attività che possa danneggiare, sovraccaricare o compromettere l'infrastruttura di FSL.</li>
+    </ul>
+    <p>FSL si riserva il diritto di intraprendere azioni legali nei confronti degli utenti che violino questi divieti.</p>
+  </div>
+
+  <!-- 8. Terzi -->
+  <div class="section" id="terzi">
+    <h2><span class="num">8</span> Servizi di terze parti</h2>
+    <p>L'App può integrarsi con servizi di terze parti, tra cui:</p>
+    <ul>
+      <li><strong>Nodi RPC blockchain</strong> (Infura, Alchemy, Solana RPC) per la lettura dei saldi dei portafogli crypto.</li>
+      <li><strong>CoinGecko API</strong> per i prezzi delle criptovalute in tempo reale.</li>
+      <li><strong>GitHub Pages</strong> per l'hosting del sito web.</li>
+    </ul>
+    <p>FSL non è responsabile per la disponibilità, l'accuratezza o le pratiche di privacy di tali servizi di terze parti. L'utilizzo di questi servizi è soggetto ai rispettivi termini e condizioni. FSL non garantisce la continuità di integrazione con servizi di terze parti, che potrebbero essere modificati o rimossi senza preavviso.</p>
+  </div>
+
+  <!-- 9. Modifiche -->
+  <div class="section" id="modifiche">
+    <h2><span class="num">9</span> Modifiche al servizio e ai termini</h2>
+    <p>FSL si riserva il diritto di modificare, sospendere o interrompere l'App o il Sito, in tutto o in parte, in qualsiasi momento e senza preavviso, per ragioni tecniche, commerciali o di sicurezza.</p>
+    <p>Le modifiche sostanziali ai presenti Termini saranno comunicate tramite:</p>
+    <ul>
+      <li>Notifica in-app con almeno <strong style="color:var(--text);">30 giorni</strong> di preavviso.</li>
+      <li>Avviso sul sito web <a href="https://app.fslditta.com" style="color:#60a5fa;">app.fslditta.com</a>.</li>
+      <li>Aggiornamento della data "Ultimo aggiornamento" in cima a questa pagina.</li>
+    </ul>
+    <p>L'utilizzo continuato dell'App dopo la data di entrata in vigore delle modifiche costituisce accettazione dei nuovi Termini.</p>
+  </div>
+
+  <!-- 10. Risoluzione -->
+  <div class="section" id="risoluzione">
+    <h2><span class="num">10</span> Risoluzione del contratto</h2>
+    <p>L'utente può cessare di utilizzare l'App in qualsiasi momento disinstallandola dal proprio dispositivo. La disinstallazione comporta la cancellazione di tutti i dati locali dell'App.</p>
+    <p>FSL può sospendere o terminare l'accesso dell'utente all'App in caso di:</p>
+    <ul>
+      <li>Violazione dei presenti Termini.</li>
+      <li>Utilizzo fraudolento o illecito dell'App.</li>
+      <li>Richiesta di autorità competenti.</li>
+      <li>Cessazione definitiva del servizio.</li>
+    </ul>
+    <p>In caso di cessazione definitiva del servizio, FSL fornirà un preavviso di almeno <strong style="color:var(--text);">90 giorni</strong> tramite notifica in-app e avviso sul sito web, per consentire agli utenti di esportare i propri dati.</p>
+  </div>
+
+  <!-- 11. Legge -->
+  <div class="section" id="legge">
+    <h2><span class="num">11</span> Legge applicabile e foro competente</h2>
+    <p>I presenti Termini sono regolati dalla <strong style="color:var(--text);">legge italiana</strong> e dal diritto dell'Unione Europea applicabile, incluso il Regolamento UE 2016/679 (GDPR) per quanto riguarda il trattamento dei dati personali.</p>
+    <p>Per qualsiasi controversia relativa all'interpretazione, all'esecuzione o alla risoluzione dei presenti Termini, le parti si impegnano a tentare in primo luogo una risoluzione amichevole. In caso di mancato accordo, sarà competente in via esclusiva il <strong style="color:var(--text);">Tribunale di Milano</strong>, salvo diversa previsione obbligatoria di legge a tutela del consumatore.</p>
+    <p>Per i consumatori residenti nell'Unione Europea, si applicano le disposizioni obbligatorie di tutela del consumatore previste dalla legge del paese di residenza dell'utente, nella misura in cui tali disposizioni siano più favorevoli rispetto alla legge italiana.</p>
+    <div class="info-box">
+      <p>ℹ️ La Commissione Europea mette a disposizione una piattaforma per la risoluzione online delle controversie (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener" style="color:#93c5fd;">ec.europa.eu/consumers/odr</a>.</p>
+    </div>
+  </div>
+
+  <!-- 12. Contatti -->
+  <div class="section" id="contatti">
+    <h2><span class="num">12</span> Contatti</h2>
+    <p>Per qualsiasi domanda, reclamo o richiesta relativa ai presenti Termini di Servizio, è possibile contattare FSL Multiservice ai seguenti recapiti:</p>
+    <div class="contact-card">
+      <p>📧 Email: <a href="mailto:info@fslditta.com">info@fslditta.com</a></p>
+      <p>🔒 Privacy: <a href="mailto:privacy@fslditta.com">privacy@fslditta.com</a></p>
+      <p>🌐 Sito web: <a href="https://www.fslditta.com" target="_blank" rel="noopener">www.fslditta.com</a></p>
+      <p>💬 Telegram: <a href="https://t.me/fslditta" target="_blank" rel="noopener">@fslditta</a></p>
+      <p>📄 Privacy Policy: <a href="/privacy.html">Leggi l'informativa privacy</a></p>
+    </div>
+    <p style="margin-top:16px;">Ci impegniamo a rispondere alle richieste entro <strong style="color:var(--text);">15 giorni lavorativi</strong> dalla ricezione.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 <strong style="color:#94a3b8;">FSL Multiservice</strong>. Tutti i diritti riservati.
+    &nbsp;·&nbsp;
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Termini di Servizio</a>
+    <a href="mailto:info@fslditta.com">Contatti</a>
+  </p>
+</footer>
+
+</body>
+</html>
