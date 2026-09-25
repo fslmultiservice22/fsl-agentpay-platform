@@ -15,6 +15,8 @@ const required = [
   "25 settembre 2026",
   "beta tecnica controllata e non transazionale",
   "non deve ricevere numeri di carta, IBAN",
+  'href="privacy.html"',
+  'href="terms.html"',
 ];
 
 const forbidden = [
