@@ -1,366 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy di AgentPay Wallet - FSL Multiservice. Informativa sul trattamento dei dati personali ai sensi del GDPR (Reg. UE 2016/679)." />
-  <title>Privacy Policy — AgentPay Wallet | FSL Multiservice</title>
-  <meta name="theme-color" content="#1a56db" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informativa privacy della beta tecnica non transazionale AgentPay Wallet.">
+  <meta name="theme-color" content="#071524">
+  <title>Privacy — AgentPay Wallet</title>
+  <link rel="icon" href="favicon.ico">
   <style>
-    :root {
-      --primary: #1a56db;
-      --primary-dark: #1e429f;
-      --secondary: #0e9f6e;
-      --bg: #0f172a;
-      --bg-card: #1e293b;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border: #334155;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.7; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(15,23,42,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem; height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-text { font-size: 1.25rem; font-weight: 800; color: var(--text); }
-    .nav-logo-text span { color: #60a5fa; }
-    .nav-back { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-back:hover { color: var(--text); }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #0f172a 0%, #162032 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 64px 2rem 48px;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(26,86,219,0.15); border: 1px solid rgba(26,86,219,0.3);
-      color: #60a5fa; padding: 6px 16px; border-radius: 100px;
-      font-size: 13px; font-weight: 600; margin-bottom: 1.5rem;
-    }
-    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
-    .hero p { font-size: 1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
-    .hero-meta { margin-top: 1.5rem; font-size: 13px; color: var(--text-muted); }
-
-    /* CONTENT */
-    .container { max-width: 820px; margin: 0 auto; padding: 60px 2rem 80px; }
-
-    .toc {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 24px 28px; margin-bottom: 48px;
-    }
-    .toc h2 { font-size: 14px; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
-    .toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
-    .toc li a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .toc li a:hover { color: var(--text); }
-
-    .section { margin-bottom: 48px; }
-    .section h2 {
-      font-size: 1.25rem; font-weight: 700; color: var(--text);
-      margin-bottom: 16px; padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .section h2 .num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 28px; height: 28px; border-radius: 8px;
-      background: rgba(26,86,219,0.2); color: #60a5fa;
-      font-size: 13px; font-weight: 700; flex-shrink: 0;
-    }
-    .section p { font-size: 15px; color: var(--text-muted); margin-bottom: 12px; }
-    .section p:last-child { margin-bottom: 0; }
-    .section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
-    .section ul li { font-size: 15px; color: var(--text-muted); }
-    .section ul li strong { color: var(--text); }
-
-    .highlight-box {
-      background: rgba(26,86,219,0.08); border: 1px solid rgba(26,86,219,0.25);
-      border-radius: 10px; padding: 16px 20px; margin: 16px 0;
-    }
-    .highlight-box p { margin: 0; font-size: 14px; color: #93c5fd; }
-
-    .warning-box {
-      background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25);
-      border-radius: 10px; padding: 16px 20px; margin: 16px 0;
-    }
-    .warning-box p { margin: 0; font-size: 14px; color: #fcd34d; }
-
-    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .data-table th {
-      background: rgba(26,86,219,0.15); color: #60a5fa;
-      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-      padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border);
-    }
-    .data-table td {
-      padding: 10px 14px; font-size: 14px; color: var(--text-muted);
-      border-bottom: 1px solid rgba(51,65,85,0.5);
-      vertical-align: top;
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table td strong { color: var(--text); }
-
-    .contact-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 24px 28px;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .contact-card a { color: #60a5fa; text-decoration: none; }
-    .contact-card a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer {
-      background: #080f1e; border-top: 1px solid #1e293b;
-      padding: 40px 2rem 28px; text-align: center;
-    }
-    footer p { font-size: 13px; color: #64748b; }
-    footer a { color: #94a3b8; text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: var(--text); }
-
-    @media (max-width: 640px) {
-      .container { padding: 40px 1.25rem 60px; }
-      .hero { padding: 48px 1.25rem 36px; }
-      .data-table { font-size: 13px; }
-      .data-table th, .data-table td { padding: 8px 10px; }
-    }
+    :root{--ink:#eef5fb;--muted:#a7b8c7;--night:#071524;--panel:#102a42;--line:#26445d;--gold:#d7ad5c;--aqua:#5ac8c1}*{box-sizing:border-box}body{margin:0;background:var(--night);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--aqua)}header,main,footer{width:min(860px,calc(100% - 40px));margin:auto}header{padding:42px 0 28px;border-bottom:1px solid var(--line)}nav{margin-bottom:32px}nav a{text-decoration:none;color:var(--muted)}h1{font-size:clamp(36px,7vw,60px);line-height:1.05;margin:0 0 18px;color:white}h2{margin-top:42px;color:white}.lead{color:var(--muted);font-size:19px}.notice{padding:18px;border-left:3px solid var(--gold);background:rgba(215,173,92,.08)}main{padding:18px 0 60px}section{padding-top:8px}p,li{color:var(--muted)}strong{color:var(--ink)}table{width:100%;border-collapse:collapse;margin:18px 0}th,td{padding:14px;text-align:left;vertical-align:top;border:1px solid var(--line)}th{color:var(--aqua);background:var(--panel)}footer{padding:30px 0 48px;border-top:1px solid var(--line);color:var(--muted)}
   </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">
-    <img src="/logo-icon.png" alt="AgentPay" width="32" height="32" style="border-radius:8px;" onerror="this.style.display='none'" />
-    <span class="nav-logo-text">FSL <span>+</span> AgentPay</span>
-  </a>
-  <a href="/" class="nav-back">← Torna alla home</a>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">🔒 Informativa Privacy</div>
-  <h1>Privacy Policy</h1>
-  <p>Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003 come modificato dal D.Lgs. 101/2018.</p>
-  <p class="hero-meta">Ultimo aggiornamento: 28 maggio 2026 · Versione 1.0</p>
-</div>
-
-<!-- CONTENT -->
-<div class="container">
-
-  <!-- Indice -->
-  <div class="toc">
-    <h2>Indice</h2>
-    <ol>
-      <li><a href="#titolare">Titolare del trattamento</a></li>
-      <li><a href="#dati">Dati raccolti</a></li>
-      <li><a href="#finalita">Finalità e base giuridica</a></li>
-      <li><a href="#conservazione">Conservazione dei dati</a></li>
-      <li><a href="#condivisione">Condivisione con terzi</a></li>
-      <li><a href="#trasferimenti">Trasferimenti internazionali</a></li>
-      <li><a href="#diritti">Diritti dell'interessato</a></li>
-      <li><a href="#minori">Minori</a></li>
-      <li><a href="#sicurezza">Sicurezza</a></li>
-      <li><a href="#modifiche">Modifiche alla presente informativa</a></li>
-      <li><a href="#contatti">Contatti e DPO</a></li>
-    </ol>
-  </div>
-
-  <!-- 1. Titolare -->
-  <div class="section" id="titolare">
-    <h2><span class="num">1</span> Titolare del trattamento</h2>
-    <p>Il titolare del trattamento dei dati personali è:</p>
-    <div class="contact-card">
-      <p><strong style="color:var(--text);">FSL Multiservice</strong></p>
-      <p>Sede legale: Italia</p>
-      <p>Email: <a href="mailto:privacy@fslditta.com">privacy@fslditta.com</a></p>
-      <p>Sito web: <a href="https://www.fslditta.com" target="_blank" rel="noopener">www.fslditta.com</a></p>
-      <p>Applicazione: <strong style="color:var(--text);">AgentPay Wallet</strong> — disponibile su App Store e Google Play</p>
-    </div>
-  </div>
-
-  <!-- 2. Dati raccolti -->
-  <div class="section" id="dati">
-    <h2><span class="num">2</span> Dati raccolti</h2>
-    <p>L'applicazione AgentPay Wallet è progettata con un approccio <strong style="color:var(--text);">privacy-first</strong>: la grande maggioranza dei dati viene elaborata e conservata <strong style="color:var(--text);">esclusivamente sul dispositivo dell'utente</strong> (local storage), senza trasmissione a server esterni.</p>
-
-    <div class="highlight-box">
-      <p>💡 <strong>Principio fondamentale:</strong> AgentPay Wallet non richiede la creazione di un account, non raccoglie dati anagrafici e non trasmette informazioni finanziarie a server di terze parti.</p>
-    </div>
-
-    <p>Di seguito la classificazione completa dei dati trattati:</p>
-
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Esempi</th>
-          <th>Dove è conservato</th>
-          <th>Obbligatorio</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Dati finanziari locali</strong></td>
-          <td>Conti bancari (IBAN, intestatario), bonifici, importi, descrizioni</td>
-          <td>Solo dispositivo (AsyncStorage)</td>
-          <td>Sì — core dell'app</td>
-        </tr>
-        <tr>
-          <td><strong>Preferenze utente</strong></td>
-          <td>Lingua, valuta, tema, ordine widget, obiettivi di spesa</td>
-          <td>Solo dispositivo (AsyncStorage)</td>
-          <td>No — opzionale</td>
-        </tr>
-        <tr>
-          <td><strong>Dati portafoglio crypto</strong></td>
-          <td>Indirizzi Ethereum/Solana, saldi (solo lettura pubblica)</td>
-          <td>Solo dispositivo; query a RPC pubblici</td>
-          <td>No — opzionale</td>
-        </tr>
-        <tr>
-          <td><strong>Log notifiche</strong></td>
-          <td>Storico notifiche push locali (tipo, testo, timestamp)</td>
-          <td>Solo dispositivo (AsyncStorage)</td>
-          <td>No — opzionale</td>
-        </tr>
-        <tr>
-          <td><strong>Dati tecnici anonimi</strong></td>
-          <td>Versione app, sistema operativo, lingua dispositivo</td>
-          <td>Solo dispositivo; nessuna trasmissione</td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <td><strong>Dati di navigazione sito web</strong></td>
-          <td>Indirizzo IP, pagine visitate, browser, timestamp</td>
-          <td>Server GitHub Pages (log standard)</td>
-          <td>Automatico</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="warning-box">
-      <p>⚠️ <strong>Chiavi private e seed phrase:</strong> AgentPay Wallet non richiede mai l'inserimento di chiavi private o seed phrase. Non fornire mai queste informazioni a nessuna applicazione.</p>
-    </div>
-  </div>
-
-  <!-- 3. Finalità -->
-  <div class="section" id="finalita">
-    <h2><span class="num">3</span> Finalità e base giuridica</h2>
-    <p>I dati vengono trattati esclusivamente per le seguenti finalità:</p>
-    <ul>
-      <li><strong>Erogazione del servizio:</strong> gestione locale di conti, bonifici, pagamenti ricorrenti e analisi delle spese. Base giuridica: esecuzione del contratto (art. 6.1.b GDPR).</li>
-      <li><strong>Notifiche push locali:</strong> promemoria per scadenze e pagamenti ricorrenti. Base giuridica: consenso dell'utente (art. 6.1.a GDPR), revocabile in qualsiasi momento dalle impostazioni del dispositivo.</li>
-      <li><strong>Miglioramento del servizio:</strong> analisi anonima e aggregata dei pattern di utilizzo, senza identificazione dell'utente. Base giuridica: legittimo interesse (art. 6.1.f GDPR).</li>
-      <li><strong>Sicurezza e prevenzione frodi:</strong> rilevamento di accessi anomali. Base giuridica: legittimo interesse (art. 6.1.f GDPR).</li>
-    </ul>
-    <p>I dati non vengono mai utilizzati per finalità di marketing, profilazione commerciale o vendita a terzi.</p>
-  </div>
-
-  <!-- 4. Conservazione -->
-  <div class="section" id="conservazione">
-    <h2><span class="num">4</span> Conservazione dei dati</h2>
-    <p>I dati memorizzati localmente sul dispositivo vengono conservati fino a quando l'utente non decide di eliminarli tramite le funzioni dell'app (es. eliminazione conto, cancellazione storico) o fino alla disinstallazione dell'applicazione.</p>
-    <p>I log tecnici del server web (GitHub Pages) vengono conservati per un massimo di <strong style="color:var(--text);">90 giorni</strong> in conformità con le politiche di GitHub Inc., dopodiché vengono eliminati automaticamente.</p>
-    <p>Non esistono backup automatici dei dati utente su server remoti: la responsabilità della conservazione dei dati locali è dell'utente stesso.</p>
-  </div>
-
-  <!-- 5. Condivisione -->
-  <div class="section" id="condivisione">
-    <h2><span class="num">5</span> Condivisione con terzi</h2>
-    <p>FSL Multiservice non vende, affitta né cede i dati personali degli utenti a terzi per finalità commerciali. I dati possono essere condivisi esclusivamente nei seguenti casi:</p>
-    <ul>
-      <li><strong>RPC pubblici blockchain:</strong> per la lettura dei saldi dei portafogli crypto, l'app effettua richieste a nodi RPC pubblici (es. Infura, Alchemy, Solana RPC). Queste richieste contengono solo l'indirizzo pubblico del portafoglio, che per natura è già pubblico sulla blockchain.</li>
-      <li><strong>GitHub Pages:</strong> il sito web <em>app.fslditta.com</em> è ospitato su GitHub Pages (GitHub Inc., USA). GitHub raccoglie log di accesso standard come da propria <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color:#60a5fa;">Privacy Statement</a>.</li>
-      <li><strong>Obbligo di legge:</strong> in caso di richiesta da parte di autorità giudiziarie o amministrative competenti, nei limiti previsti dalla legge applicabile.</li>
-    </ul>
-  </div>
-
-  <!-- 6. Trasferimenti internazionali -->
-  <div class="section" id="trasferimenti">
-    <h2><span class="num">6</span> Trasferimenti internazionali</h2>
-    <p>I dati locali dell'app non vengono trasferiti al di fuori del dispositivo dell'utente. I log del sito web possono essere elaborati da GitHub Inc. negli Stati Uniti, nel rispetto delle clausole contrattuali standard approvate dalla Commissione Europea (Standard Contractual Clauses — SCC) ai sensi dell'art. 46 GDPR.</p>
-  </div>
-
-  <!-- 7. Diritti -->
-  <div class="section" id="diritti">
-    <h2><span class="num">7</span> Diritti dell'interessato</h2>
-    <p>Ai sensi degli artt. 15–22 del GDPR, l'utente ha il diritto di:</p>
-    <ul>
-      <li><strong>Accesso (art. 15):</strong> ottenere conferma del trattamento e copia dei dati personali.</li>
-      <li><strong>Rettifica (art. 16):</strong> correggere dati inesatti o incompleti.</li>
-      <li><strong>Cancellazione ("diritto all'oblio", art. 17):</strong> richiedere la cancellazione dei dati personali, salvo obblighi di legge.</li>
-      <li><strong>Limitazione del trattamento (art. 18):</strong> richiedere la sospensione del trattamento in determinati casi.</li>
-      <li><strong>Portabilità (art. 20):</strong> ricevere i propri dati in formato strutturato e leggibile da macchina.</li>
-      <li><strong>Opposizione (art. 21):</strong> opporsi al trattamento basato su legittimo interesse.</li>
-      <li><strong>Revoca del consenso:</strong> revocare in qualsiasi momento il consenso prestato, senza pregiudicare la liceità del trattamento precedente.</li>
-    </ul>
-    <p>Poiché la maggior parte dei dati è conservata localmente sul dispositivo, l'utente può esercitare direttamente questi diritti tramite le funzioni dell'app (es. eliminazione dati, esportazione CSV). Per richieste relative ai log del sito web o per qualsiasi altra questione, è possibile contattare il titolare all'indirizzo indicato nella sezione 11.</p>
-    <p>L'utente ha inoltre il diritto di proporre reclamo all'<strong style="color:var(--text);">Autorità Garante per la protezione dei dati personali</strong> (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener" style="color:#60a5fa;">www.garanteprivacy.it</a>).</p>
-  </div>
-
-  <!-- 8. Minori -->
-  <div class="section" id="minori">
-    <h2><span class="num">8</span> Minori</h2>
-    <p>AgentPay Wallet è destinata a utenti di età pari o superiore a <strong style="color:var(--text);">18 anni</strong>. Non raccogliamo consapevolmente dati di minori. Se un genitore o tutore dovesse rilevare che un minore ha utilizzato l'app, è pregato di contattarci all'indirizzo indicato nella sezione 11 per richiedere la cancellazione dei dati.</p>
-  </div>
-
-  <!-- 9. Sicurezza -->
-  <div class="section" id="sicurezza">
-    <h2><span class="num">9</span> Sicurezza</h2>
-    <p>Adottiamo misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, divulgazione, alterazione o distruzione, tra cui:</p>
-    <ul>
-      <li>Archiviazione locale crittografata tramite le API native del sistema operativo (iOS Keychain / Android Keystore) per i dati sensibili.</li>
-      <li>Comunicazioni HTTPS/TLS per tutte le richieste di rete.</li>
-      <li>Nessuna trasmissione di dati finanziari a server remoti.</li>
-      <li>Aggiornamenti regolari dell'applicazione per correggere vulnerabilità di sicurezza.</li>
-    </ul>
-    <p>Nonostante le misure adottate, nessun sistema è completamente immune da rischi. In caso di violazione dei dati che possa comportare un rischio per i diritti e le libertà degli utenti, provvederemo a notificare l'evento all'autorità di controllo competente entro 72 ore e, se necessario, agli interessati, ai sensi dell'art. 33–34 GDPR.</p>
-  </div>
-
-  <!-- 10. Modifiche -->
-  <div class="section" id="modifiche">
-    <h2><span class="num">10</span> Modifiche alla presente informativa</h2>
-    <p>FSL Multiservice si riserva il diritto di modificare la presente informativa in qualsiasi momento, per adeguarla a modifiche normative, tecnologiche o operative. Le modifiche sostanziali saranno comunicate tramite notifica in-app o tramite avviso sul sito web con almeno <strong style="color:var(--text);">30 giorni</strong> di preavviso.</p>
-    <p>La data dell'ultimo aggiornamento è indicata in cima alla presente pagina. L'utilizzo continuato dell'applicazione dopo la pubblicazione delle modifiche costituisce accettazione della nuova versione dell'informativa.</p>
-  </div>
-
-  <!-- 11. Contatti -->
-  <div class="section" id="contatti">
-    <h2><span class="num">11</span> Contatti e DPO</h2>
-    <p>Per esercitare i propri diritti o per qualsiasi domanda relativa al trattamento dei dati personali, è possibile contattare il titolare del trattamento:</p>
-    <div class="contact-card">
-      <p>📧 Email: <a href="mailto:privacy@fslditta.com">privacy@fslditta.com</a></p>
-      <p>🌐 Sito web: <a href="https://www.fslditta.com" target="_blank" rel="noopener">www.fslditta.com</a></p>
-      <p>💬 Telegram: <a href="https://t.me/fslditta" target="_blank" rel="noopener">@fslditta</a></p>
-      <p>📍 Sede: Italia</p>
-    </div>
-    <p style="margin-top:16px;">Ci impegniamo a rispondere alle richieste entro <strong style="color:var(--text);">30 giorni</strong> dalla ricezione, salvo casi di particolare complessità che richiedano un'estensione fino a 60 giorni, previa comunicazione all'interessato.</p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p>
-    &copy; 2026 <strong style="color:#94a3b8;">FSL Multiservice</strong>. Tutti i diritti riservati.
-    &nbsp;·&nbsp;
-    <a href="/">Home</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="mailto:privacy@fslditta.com">Contatti</a>
-  </p>
-</footer>
-
+  <header>
+    <nav><a href="/">AgentPay Wallet — torna alla pagina tecnica</a></nav>
+    <h1>Informativa privacy</h1>
+    <p class="lead">Informazioni sul trattamento dei dati nel sito informativo e nella beta tecnica non transazionale.</p>
+    <p class="notice"><strong>Perimetro:</strong> AgentPay non richiede e non deve ricevere numeri di carta, IBAN, credenziali bancarie, saldi, transazioni, chiavi private, password o codici di autenticazione.</p>
+  </header>
+  <main>
+    <section>
+      <h2>1. Titolare e contatti</h2>
+      <p>Il riferimento del progetto è FSL Multiservice. Per richieste privacy è disponibile l'indirizzo <a href="mailto:privacy@fslditta.com">privacy@fslditta.com</a>. Non è dichiarato un responsabile della protezione dei dati dedicato.</p>
+    </section>
+    <section>
+      <h2>2. Dati trattati</h2>
+      <table>
+        <thead><tr><th>Contesto</th><th>Dati possibili</th><th>Finalità</th></tr></thead>
+        <tbody>
+          <tr><td>Sito pubblico</td><td>Indirizzo IP, user agent, data e ora, URL richiesto e dati tecnici generati dall'infrastruttura di hosting.</td><td>Sicurezza, disponibilità e diagnosi tecnica.</td></tr>
+          <tr><td>App beta</td><td>Preferenze tecniche e dati dimostrativi salvati localmente sul dispositivo.</td><td>Funzionamento dell'interfaccia e dei controlli locali della beta.</td></tr>
+          <tr><td>Supporto volontario</td><td>Indirizzo email e contenuto inviato direttamente dall'interessato.</td><td>Rispondere alla richiesta e documentare la risoluzione.</td></tr>
+        </tbody>
+      </table>
+      <p>L'app non usa dati bancari reali nel perimetro corrente. I moduli Wallester sono mock read-only; pagamenti, carte, conti, credito, Open Banking e provider finanziari sono disattivati.</p>
+    </section>
+    <section>
+      <h2>3. Base giuridica e conservazione</h2>
+      <p>I dati tecnici strettamente necessari sono trattati per sicurezza e funzionamento del servizio. Le comunicazioni di supporto sono trattate per rispondere alla richiesta. I tempi di conservazione dipendono dai log tecnici dell'hosting e dalla necessità di gestire la richiesta; i dati non devono essere conservati oltre il necessario.</p>
+    </section>
+    <section>
+      <h2>4. Fornitori e trasferimenti</h2>
+      <p>Il sito e il progetto possono utilizzare infrastrutture tecniche di GitHub, Cloudflare, Manus ed Expo. Tali fornitori trattano dati tecnici secondo le proprie condizioni e informative. Eventuali trasferimenti internazionali dipendono dalla loro infrastruttura e dalle garanzie applicabili.</p>
+    </section>
+    <section>
+      <h2>5. Cookie e tracciamento</h2>
+      <p>Questa pagina informativa non integra pubblicità comportamentale o strumenti di profilazione. L'infrastruttura può usare meccanismi strettamente necessari a sicurezza, sessione tecnica o protezione anti-abuso. Ogni futura funzione analitica o di autenticazione destinata al pubblico richiederà un aggiornamento dell'informativa.</p>
+    </section>
+    <section>
+      <h2>6. Diritti</h2>
+      <p>Nei casi previsti dal GDPR, l'interessato può chiedere accesso, rettifica, cancellazione, limitazione, opposizione e portabilità, nonché proporre reclamo all'autorità di controllo competente. Le richieste possono essere inviate al contatto privacy indicato sopra.</p>
+    </section>
+    <section>
+      <h2>7. Sicurezza e modifiche</h2>
+      <p>Vengono applicate misure proporzionate al carattere sperimentale della beta, senza promettere sicurezza assoluta. Questa informativa sarà riesaminata prima di qualunque attivazione di account pubblici, analytics, provider esterni o funzioni che trattino categorie di dati ulteriori.</p>
+    </section>
+  </main>
+  <footer>Versione beta 2.0 — ultimo aggiornamento 25 settembre 2026</footer>
 </body>
 </html>
