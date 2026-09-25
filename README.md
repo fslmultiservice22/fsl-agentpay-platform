@@ -1,45 +1,28 @@
-# FSL + AgentPay Platform
+# AgentPay Wallet — sito tecnico pubblico
 
-**Piattaforma integrata FSL Ditta + AgentPay Wallet**
+Sito informativo pubblico di **AgentPay Wallet**, progetto software di FSL Multiservice in sviluppo controllato.
 
-🌐 **Live:** [agentpay.fslditta.com](https://agentpay.fslditta.com)
+**Live:** [agentpay.fslditta.com](https://agentpay.fslditta.com)
 
-## Descrizione
+## Perimetro
 
-La piattaforma FSL + AgentPay combina la gestione professionale di [FSL Ditta](https://fslditta.com) con le capacità avanzate del wallet AgentPay per la gestione dei pagamenti tramite agenti AI.
+La pagina documenta lo stato tecnico verificato del progetto. Non offre e non attiva wallet operativi, pagamenti, carte, conti, IBAN, credito, trasferimenti, trading, Open Banking o collegamenti a provider finanziari.
 
-## Funzionalità
+## Stato applicativo di riferimento
 
-- 🔐 Wallet Self-Custodial con sicurezza biometrica
-- 🤖 Agenti AI per autorizzazione transazioni
-- 📊 Portfolio Analytics avanzato
-- 🔄 Swap & Trading (Uniswap, PancakeSwap, Curve)
-- 🌐 Multi-Chain (Ethereum, Polygon, BSC, Solana, Arbitrum)
-- 🏦 Banking Integration (Stripe + Wise)
-- 📱 App Mobile iOS + Android
+- Expo SDK 57.0.25
+- React Native 0.86.3
+- TypeScript
+- 921 test passati e 8 saltati nell'ultima validazione registrata
+- APK interna 1.1.0 completata
+- candidato 1.1.1 pronto nel sorgente, in attesa di quota EAS e collaudo su dispositivo
+- Open Banking e provider finanziari disattivati per policy (`enabled=false`, `networkRequestsAllowed=false`)
+- Wallester rappresentato soltanto da dati mock read-only
 
-## App Mobile
+Il codice dell'app mobile è disponibile nel repository [fslmultiservice22/agentpay-mobile-app](https://github.com/fslmultiservice22/agentpay-mobile-app).
 
-Il codice sorgente dell'app mobile AgentPay Wallet è disponibile su:
-👉 [github.com/fslmultiservice22/agentpay-mobile-app](https://github.com/fslmultiservice22/agentpay-mobile-app)
+## Pubblicazione
 
-## Stack Tecnologico
+Il repository contiene un sito statico e una workflow GitHub Pages. Prima della pubblicazione, la validazione automatica deve confermare che metriche, toolchain e dichiarazioni finanziarie siano coerenti con il perimetro non transazionale.
 
-- **Frontend:** React Native + Expo SDK 54 + TypeScript
-- **Backend:** Node.js + Express + TypeScript
-- **Database:** Cloudflare D1 (SQLite edge)
-- **Cache:** Cloudflare KV
-- **Auth:** JWT + OAuth2 + 2FA
-- **Payments:** Stripe + Wise
-- **Infrastructure:** Cloudflare Workers + GitHub Pages
-
-## Statistiche
-
-- ✅ 31 Feature Implementate
-- ✅ 744+ Test Automatizzati
-- ✅ 99.4% Test Success Rate
-- ✅ 5 Blockchain Supportate
-
----
-
-© 2026 FSL Multiservice. Tutti i diritti riservati.
+© 2026 FSL Multiservice.
